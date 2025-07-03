@@ -152,6 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       const platform = this.querySelector("span").textContent;
+      const href = this.getAttribute("href");
+      if (!href) return;
 
       // Add click animation
       this.style.transform = "scale(0.95)";
