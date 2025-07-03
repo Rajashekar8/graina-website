@@ -238,8 +238,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "VERSATILE USAGE: Perfect for quick breakfasts, power snacks, and guilt-free desserts - simply scoop, cook, and enjoy",
         "STORAGE INFORMATION: Store in a cool, dry place away from sunlight; once opened, keep jar tightly sealed and consume within 30 days",
       ],
-      amazonLink: "https://www.amazon.in/s?k=rolled+oats+graina",
-      flipkartLink: "https://www.flipkart.com/search?q=rolled+oats+graina",
+      amazonLink: "https://www.amazon.in/s?k=Graina+rolled+oats",
+      flipkartLink: "https://www.flipkart.com/search?q=Graina+rolled+oats",
     },
     "Creamy Oats": {
       image: "./images/creamy_oats.jpeg",
@@ -251,8 +251,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "VERSATILE USAGE: Perfect for quick breakfasts, power snacks, and guilt-free desserts - simply scoop, cook, and enjoy",
         "STORAGE INFORMATION: Store in a cool, dry place away from sunlight; once opened, keep jar tightly sealed and consume within 30 days",
       ],
-      amazonLink: "https://www.amazon.in/s?k=creamy+oats+graina",
-      flipkartLink: "https://www.flipkart.com/search?q=creamy+oats+graina",
+      amazonLink: "https://www.amazon.in/s?k=Graina+creamy+oats",
+      flipkartLink: "https://www.flipkart.com/search?q=Graina+creamy+oats",
     },
     "Finger Millet (Ragi)": {
       image: "./images/finger_millet.jpg",
@@ -261,8 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Placeholder: Detailed features for Finger Millet (Ragi).",
         "Placeholder: Additional benefits.",
       ],
-      amazonLink: "https://www.amazon.in/s?k=finger+millet+ragi+graina",
-      flipkartLink: "https://www.flipkart.com/search?q=finger+millet+ragi+graina",
+      amazonLink: "https://www.amazon.in/s?k=Graina+finger+millet+ragi",
+      flipkartLink: "https://www.flipkart.com/search?q=Graina+finger+millet+ragi",
     },
     "Foxtail Millet (Korralu)": {
       image: "./images/foxtail_millet.webp",
@@ -271,8 +271,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Placeholder: Detailed features for Foxtail Millet (Korralu).",
         "Placeholder: Additional benefits.",
       ],
-      amazonLink: "https://www.amazon.in/s?k=foxtail+millet+korralu+graina",
-      flipkartLink: "https://www.flipkart.com/search?q=foxtail+millet+korralu+graina",
+      amazonLink: "https://www.amazon.in/s?k=Graina+foxtail+millet+korralu",
+      flipkartLink: "https://www.flipkart.com/search?q=Graina+foxtail+millet+korralu",
     },
     "Little Millet (Samalu)": {
       image: "./images/little_millet.jpg",
@@ -281,8 +281,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Placeholder: Detailed features for Little Millet (Samalu).",
         "Placeholder: Additional benefits.",
       ],
-      amazonLink: "https://www.amazon.in/s?k=little+millet+samalu+graina",
-      flipkartLink: "https://www.flipkart.com/search?q=little+millet+samalu+graina",
+      amazonLink: "https://www.amazon.in/s?k=Graina+little+millet+samalu",
+      flipkartLink: "https://www.flipkart.com/search?q=Graina+little+millet+samalu",
     },
   };
 
