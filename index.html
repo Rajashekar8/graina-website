@@ -377,8 +377,8 @@
                     <div class="footer-section">
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a></li>
+                            <li><a href="#" onclick="openModal('termsModal'); return false;">Terms of Service</a></li>
                             <li><a href="#">Sitemap</a></li>
                         </ul>
                     </div>
@@ -389,6 +389,33 @@
             </div>
         </div>
     </footer>
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+    <h2>Privacy Policy</h2>
+    <p>
+      We respect your privacy. This website collects minimal personal information that you voluntarily provide (such as name and email when you contact us). We do not sell or share your data with third parties except as required by law.
+    </p>
+    <p>
+      By using this website, you consent to our privacy practices.
+    </p>
+  </div>
+</div>
+
+<!-- Terms of Service Modal -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('termsModal')">&times;</span>
+    <h2>Terms of Service</h2>
+    <p>
+      By accessing and using this website, you agree to comply with all applicable laws and regulations. All content is provided "as is" without warranties. We are not liable for any damages resulting from the use of this site.
+    </p>
+    <p>
+      We may update these terms periodically without notice.
+    </p>
+  </div>
+</div>
 
     <script src="script.js"></script>
 </body>
