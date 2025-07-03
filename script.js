@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "STORAGE INFORMATION: Store in a cool, dry place away from sunlight; once opened, keep jar tightly sealed and consume within 30 days",
       ],
       amazonLink: "https://www.amazon.in/s?k=Graina+rolled+oats",
-      flipkartLink: "https://www.flipkart.com/search?q=Graina+rolled+oats",
+      flipkartLink: "https://www.mystore.in/en/seller/graina",
     },
     "Creamy Oats": {
       image: "./images/creamy_oats.jpeg",
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "STORAGE INFORMATION: Store in a cool, dry place away from sunlight; once opened, keep jar tightly sealed and consume within 30 days",
       ],
       amazonLink: "https://www.amazon.in/s?k=Graina+creamy+oats",
-      flipkartLink: "https://www.flipkart.com/search?q=Graina+creamy+oats",
+      flipkartLink: "https://www.mystore.in/en/seller/graina",
     },
     "Finger Millet (Ragi)": {
       image: "./images/finger_millet.jpg",
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Placeholder: Additional benefits.",
       ],
       amazonLink: "https://www.amazon.in/s?k=Graina+finger+millet+ragi",
-      flipkartLink: "https://www.flipkart.com/search?q=Graina+finger+millet+ragi",
+      flipkartLink: "https://www.mystore.in/en/seller/graina",
     },
     "Foxtail Millet (Korralu)": {
       image: "./images/foxtail_millet.webp",
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Placeholder: Additional benefits.",
       ],
       amazonLink: "https://www.amazon.in/s?k=Graina+foxtail+millet+korralu",
-      flipkartLink: "https://www.flipkart.com/search?q=Graina+foxtail+millet+korralu",
+      flipkartLink: "https://www.mystore.in/en/seller/graina",
     },
     "Little Millet (Samalu)": {
       image: "./images/little_millet.jpg",
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Placeholder: Additional benefits.",
       ],
       amazonLink: "https://www.amazon.in/s?k=Graina+little+millet+samalu",
-      flipkartLink: "https://www.flipkart.com/search?q=Graina+little+millet+samalu",
+      flipkartLink: "https://www.mystore.in/en/seller/graina",
     },
   };
 
