@@ -388,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .benefit-card:hover {
-    transform: translateY(0px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow-heavy);
 }
 
