@@ -1,6 +1,6 @@
 :root {
     --brand-dark-green: #1a543b;
-    --brand-white: #1a543b;
+    --brand-white: #fff;
     --complementary-color: #541A33;
     --light-gray: #f8f9fa;
     --medium-gray: #6c757d;
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--brand-dark-green);
+    color: #fff (--brand-dark-green);
     text-align: center;
     margin-bottom: 1rem;
 }
