@@ -323,5 +323,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// Optional: Close modal when clicking outside of it
+window.onclick = function(event) {
+  const privacy = document.getElementById("privacyModal");
+  const terms = document.getElementById("termsModal");
+
+  if (event.target === privacy) {
+    privacy.style.display = "none";
+  } else if (event.target === terms) {
+    terms.style.display = "none";
+  }
+};
+</script>
+
 
 
