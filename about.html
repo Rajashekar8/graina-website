@@ -8,13 +8,41 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
       color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #1a543b;
+      font-weight: bold;
     }
 
     .container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 2rem auto;
       background-color: #fff;
       padding: 2rem;
       border-radius: 10px;
@@ -56,16 +84,31 @@
     .contact-form button:hover {
       background-color: #14442f;
     }
+
+    a {
+      color: #1a543b;
+    }
   </style>
 </head>
-  </head>
+
 <body>
-  <header style="background-color: #fff; padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">
-    <a href="https://www.graina.in" target="_blank" style="display: inline-block;">
-      <img src="images/graina-logo.png" alt="Graina Logo" style="height: 60px;" />
+
+  <!-- ✅ Navigation Header -->
+  <header>
+    <a href="https://www.graina.in" class="logo" target="_blank">
+      <img src="images/graina-logo.png" alt="Graina Logo" />
     </a>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-<body>
+
+  <!-- ✅ Main Content -->
   <div class="container">
     <h1>📬 Contact Us — Graina</h1>
 
@@ -95,7 +138,7 @@
       <p>Karimnagar, Telangana, India, 505501</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="contact">
       <h2>📞 Customer Support</h2>
       <p><strong>Email:</strong> <a href="mailto:support@graina.in">support@graina.in</a></p>
       <p><strong>Phone/WhatsApp:</strong> +91-9391642155</p>
