@@ -1,389 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graina - A Healthy Life with Natural Grains</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Righteous&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Graina</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #1a543b;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #1a543b;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .contact-details p,
+    .contact-form label {
+      margin: 0.5rem 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-form button {
+      background-color: #1a543b;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #14442f;
+    }
+
+    a {
+      color: #1a543b;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <span class="logo-text">Graina</span>
-            <ul class="nav-menu">
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="#benefits" class="nav-link">Benefits</a></li>
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+
+  <!-- ✅ Navigation Header -->
+  <header>
+    <a href="https://www.graina.in" class="logo" target="_blank">
+      <img src="images/graina-logo.png" alt="Graina Logo" />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-main">Graina</span>
-                    <span class="title-sub">A Healthy Life with Natural Grains</span>
-                </h1>
-                <p class="hero-description">
-                    Discover the power of 100% natural, chemical-free grains that nourish your body and enrich your everyday meals with wholesome nutrition.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">
-                        <span>Explore Products</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#buy" class="btn btn-secondary">
-                        <span>Shop Now</span>
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Natural</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Chemicals</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Varieties</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ✅ Main Content -->
+  <div class="container">
+    <h1>📬 Contact Us — Graina</h1>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Graina</h2>
-                <p class="section-subtitle">Bringing you the finest natural grains for a healthier lifestyle</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-description">
-                        Graina brings you 100% natural, chemical-free grains to enrich your everyday meals. 
-                        Our commitment to quality ensures that every grain is carefully selected and processed 
-                        to maintain its natural goodness and nutritional value.
-                    </p>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>100% Natural Ingredients</h3>
-                                <p>No artificial additives or preservatives</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-dumbbell"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Rich in Fiber & Protein</h3>
-                                <p>Essential nutrients for your daily health</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Safe for All Ages</h3>
-                                <p>Perfect for the entire family</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Wholesome & Digestible</h3>
-                                <p>Easy on your stomach, great for health</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section contact-details">
+      <h2>🧾 Brand by:</h2>
+      <p><strong>Acinom Retail Traders LLP</strong></p>
+      <p>Registered under LLP Act, Govt. of India</p>
+      <p>GSTIN: 36ACHFA0375R1ZX </p>
+    </div>
 
-    <!-- Health Benefits Section -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Health Benefits</h2>
-                <p class="section-subtitle">Discover how our natural grains can transform your health</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/weight_loss.png" alt="Weight Loss">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Supports Weight Loss</h3>
-                        <p>High fiber content helps manage hunger and maintain a healthy weight naturally</p>
-                        <div class="benefit-highlight">High Fiber</div>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/blood_sugar.png" alt="Blood Sugar">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Regulates Blood Sugar</h3>
-                        <p>Perfect for diabetics and those looking to maintain stable blood glucose levels</p>
-                        <div class="benefit-highlight">Diabetic Friendly</div>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/kids.jpg" alt="Kids">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Perfect for Kids</h3>
-                        <p>Easy to digest and chemical-free, making it safe and nutritious for children</p>
-                        <div class="benefit-highlight">Kid Safe</div>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/energy.png" alt="Energy">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Boosts Energy</h3>
-                        <p>Balanced nutrition provides sustained energy for your daily activities</p>
-                        <div class="benefit-highlight">Energy Boost</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section">
+      <h2>👤 Our Co-Founders</h2>
+      <p><strong>Rajashekar A</strong> — Co-Founder</p>
+      <p><strong>Ravikumar A</strong> — Co-Founder</p>
+      <p>Together, they founded <strong>Graina</strong> with a shared vision: to make fresh, natural, and chemical-free food accessible to every Indian home. From oats to millets, every product is a step toward healthier living.</p>
+    </div>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Products</h2>
-                <p class="section-subtitle">Premium quality grains for every meal</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./images/rolled_oats.jpg" alt="Rolled Oats">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Rolled Oats</h3>
-                        <p class="product-description">High-fiber breakfast option for a healthy start to your day</p>
-                        <div class="product-tags">
-                            <span class="tag">High Fiber</span>
-                            <span class="tag">Breakfast</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./images/creamy_oats.jpeg" alt="Creamy Oats">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Creamy Oats</h3>
-                        <p class="product-description">Soft texture and fast-cook convenience for busy mornings</p>
-                        <div class="product-tags">
-                            <span class="tag">Quick Cook</span>
-                            <span class="tag">Creamy</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./images/finger_millet.jpg" alt="Finger Millet">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Finger Millet (Ragi)</h3>
-                        <p class="product-description">Rich in calcium and iron, perfect for traditional recipes</p>
-                        <div class="product-tags">
-                            <span class="tag">Calcium Rich</span>
-                            <span class="tag">Traditional</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./images/foxtail_millet.webp" alt="Foxtail Millet">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Foxtail Millet (Korralu)</h3>
-                        <p class="product-description">Gluten-free superfood packed with essential nutrients</p>
-                        <div class="product-tags">
-                            <span class="tag">Gluten Free</span>
-                            <span class="tag">Superfood</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="./images/little_millet.jpg" alt="Little Millet">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">Quick View</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Little Millet (Samalu)</h3>
-                        <p class="product-description">Small grain with big nutritional benefits for daily meals</p>
-                        <div class="product-tags">
-                            <span class="tag">Nutritious</span>
-                            <span class="tag">Versatile</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section">
+      <h2>🌱 Our Vision</h2>
+      <p>At Graina, we believe in honest food. Our mission is to offer pure, preservative-free grains that nurture families and support a healthy lifestyle. We’re proud to support Indian farmers and deliver quality you can trust.</p>
+    </div>
 
-    <!-- Where to Buy Section -->
-    <section id="buy" class="buy">
-        <div class="container">
-            <div class="buy-content">
-                <div class="buy-text">
-                    <h2 class="section-title">Where to Buy</h2>
-                    <p class="section-subtitle">Get Graina products from your preferred platform</p>
-                    <div class="buy-platforms">
-                       <a href="https://www.amazon.in/stores/Graina/page/47A7EE06-CF34-4ADC-BAC9-D5A3C07EEEF0" class="btn btn-primary" id="modalBuyAmazon" target="_blank"> Amazon <i class="fab fa-amazon"></i></a>
-                        <a href="https://wa.me/+919391642155" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
-                        <a href="https://www.mystore.in/en/seller/graina" class="btn btn-primary" id="modalBuyFlipkart" target="_blank"><i class="fas fa-store"></i><span>My Store</span></a>
-                    </div>
-                    <div class="cta-message">
-                        <p>"Try Graina once – you will feel the difference!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section">
+      <h2>🏢 Registered Office</h2>
+      <p>Acinom Retail Traders LLP</p>
+      <p>5-86/c, Ganeshnaar, Poodur Vil2</p>
+      <p>Karimnagar, Telangana, India, 505501</p>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="section-title">Contact Us</h2>
-                    <p class="section-subtitle">Get in touch with us for any queries</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Business Name</h4>
-                                <p>Acinom Retail Traders LLP</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+91 93916 42155</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Website</h4>
-                                <p><a href="http://www.graina.in">www.graina.in</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>Pudur, Kodimial Mandal, Jagtial, Telangana – 505501</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>support@graina.in</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section" id="contact">
+      <h2>📞 Customer Support</h2>
+      <p><strong>Email:</strong> <a href="mailto:support@graina.in">support@graina.in</a></p>
+      <p><strong>Phone/WhatsApp:</strong> +91-9391642155</p>
+      <p><strong>Hours:</strong> Mon–Sat | 10:00 AM – 6:00 PM IST</p>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo-text">Graina</span>
-                    <p class="footer-description">
-                        Bringing you 100% natural, chemical-free grains for a healthier lifestyle.
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="#benefits">Benefits</a></li>
-                            <li><a href="#products">Products</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacy_policy.html" onclick="openModal('privacyModal'); return false;">Privacy Policy</a></li>
-                            <li><a href="terms-and-conditions.html" onclick="openModal('termsModal'); return false;">Terms of Service</a></li>
-                            <li><a href="shipping-policy.html">Shipping & Refund Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Graina / Acinom Retail Traders LLP. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div class="section">
+      <h2>💬 Contact Form</h2>
+      <form class="contact-form" action="mailto:support@graina.in" method="post" enctype="text/plain">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
 
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
 
-    
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="section">
+      <h2>📱 Follow Us</h2>
+      <p>
+        <a href="https://www.instagram.com/graina.official" target="_blank">Instagram</a> |
+        <a href="https://facebook.com/graina.in" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/acinom.in/" target="_blank">Acinom Retail Traders Instagram</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
