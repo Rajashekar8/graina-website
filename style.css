@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link {
     text-decoration: none;
-    color: var(--dark-gray);
+    color: var(--brand-white);
     font-weight: 500;
     transition: var(--transition);
     position: relative;
