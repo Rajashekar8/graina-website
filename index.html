@@ -18,7 +18,37 @@
   gtag('config', 'G-TSZKVJ7JHP');
 </script>
     <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="9f3IQgsrOEcZeY" async></script>
-<body>
+
+  
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggles = document.querySelectorAll(".dropdown > a");
+
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener("click", function (e) {
+      // Only activate on mobile
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const menu = this.nextElementSibling;
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          // close any other open dropdowns
+          document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+          menu.style.display = "block";
+        }
+      }
+    });
+  });
+});
+</script>
+
+
+    
+    
+    
+    <body>
     
       <!-- Navigation -->
 <nav class="navbar">
