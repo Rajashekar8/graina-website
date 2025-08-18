@@ -97,13 +97,15 @@
 }
 
 /* Show dropdown on hover for desktop */
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
   display: block;
 }
 
 /* Mobile-friendly (disable hover, enable toggle) */
 @media (max-width: 768px) {
-  .dropdown:hover .dropdown-menu {
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu:hover {
     display: none; /* disable hover on small screens */
   }
 }
