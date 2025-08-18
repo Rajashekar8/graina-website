@@ -49,7 +49,79 @@
     </div>
   </div>
 </nav>
+<style>
+/* Base nav */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* Dropdown hidden by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #1a543b; 
+  padding: 10px 0;
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  display: block;
+  padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #15442f;
+}
+
+/* Show dropdown on hover for desktop */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile-friendly (disable hover, enable toggle) */
+@media (max-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: none; /* disable hover on small screens */
+  }
+}
+</style>
+
+<script>
+// Mobile toggle for Recipes dropdown
+document.addEventListener("DOMContentLoaded", function() {
+  const dropBtn = document.querySelector(".dropbtn");
+  const dropdownMenu = document.querySelector(".dropdown-menu");
+
+  dropBtn.addEventListener("click", function(e) {
+    e.preventDefault(); 
+    dropdownMenu.style.display = 
+      dropdownMenu.style.display === "block" ? "none" : "block";
+  });
+});
+</script>
 
     <!-- Hero Section -->
     <section class="hero">
