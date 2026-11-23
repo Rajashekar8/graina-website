@@ -1,461 +1,1828 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graina - A Healthy Life with Natural Grains</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Righteous&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Graina | Natural Grains for a Healthier Life</title>
+  <meta name="description" content="Discover Graina's range of oats, millets, whole grains and wholesome food products. Honest food for healthier everyday living.">
+  <meta name="theme-color" content="#164b35">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSZKVJ7JHP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TSZKVJ7JHP');
+  </script>
+
+  <!-- Cookie consent -->
+  <script
+    id="usercentrics-cmp"
+    src="https://app.usercentrics.eu/browser-ui/latest/loader.js"
+    data-settings-id="9f3IQgsrOEcZeY"
+    async>
+  </script>
+
+  <style>
+    :root {
+      --green: #1a543b;
+      --deep-green: #103b29;
+      --mid-green: #347451;
+      --light-green: #eaf2e8;
+      --cream: #faf7ef;
+      --gold: #c59a50;
+      --dark: #25362c;
+      --muted: #718076;
+      --white: #ffffff;
+      --shadow: 0 12px 35px rgba(25, 66, 43, 0.09);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: var(--dark);
+      background: #fff;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      color: var(--deep-green);
+      margin-bottom: 13px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      background: rgba(255,255,255,0.97);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      min-height: 78px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--green);
+      font-size: 35px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -1px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-menu li {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #34473a;
+      font-size: 14px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .nav-shop {
+      background: var(--green);
+      color: #fff !important;
+      padding: 11px 20px;
+      border-radius: 30px;
+    }
+
+    .nav-shop:hover {
+      background: var(--deep-green);
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 245px;
+      padding: 12px;
+      margin-top: 14px;
+      list-style: none;
+      background: var(--deep-green);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      z-index: 1001;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 9px 12px;
+      border-radius: 7px;
+      color: #fff;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(255,255,255,0.13);
+    }
+
+    .hamburger {
+      display: none;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      border-radius: 5px;
+      background: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(10,43,28,0.93) 0%, rgba(10,43,28,0.79) 47%, rgba(10,43,28,0.20) 100%),
+        url("images/rolled_oats.jpg") center/cover no-repeat,
+        #173f2c;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+      padding: 85px 0 105px;
+    }
+
+    .hero-text {
+      max-width: 670px;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 30px;
+      color: #f4dfb5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.08;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero-title span {
+      display: block;
+      color: #e5c58b;
+    }
+
+    .hero-description {
+      color: rgba(255,255,255,0.88);
+      font-size: 17px;
+      max-width: 590px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 35px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: all 0.25s;
+    }
+
+    .btn-primary {
+      background: #e4bd78;
+      color: #183e2b;
+      border: 2px solid #e4bd78;
+    }
+
+    .btn-primary:hover {
+      background: #f1d39e;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.23);
+      max-width: 560px;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #f1d39e;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      color: rgba(255,255,255,0.83);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* BRAND PROMISE STRIP */
+
+    .promise-strip {
+      background: var(--cream);
+      padding: 25px 20px;
+    }
+
+    .promise-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .promise-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .promise-item i {
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #fff;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 390px;
+      border-radius: 25px;
+      overflow: hidden;
+      background: var(--light-green);
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+    }
+
+    .about-description {
+      color: #66756b;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #f7f9f5;
+      border: 1px solid #edf1e9;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--light-green);
+      color: var(--green);
+      border-radius: 12px;
+      font-size: 17px;
+    }
+
+    .feature-content h3 {
+      color: var(--deep-green);
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .feature-content p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      background: var(--cream);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 7px 25px rgba(31,69,45,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-icon {
+      height: 175px;
+      background: var(--light-green);
+      overflow: hidden;
+    }
+
+    .benefit-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .benefit-content {
+      padding: 22px;
+    }
+
+    .benefit-content h3 {
+      color: var(--deep-green);
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .benefit-content p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .benefit-highlight {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      background: var(--light-green);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 20px;
+    }
+
+    /* PRODUCT INTRO */
+
+    .products-intro {
+      background: #fff;
+    }
+
+    .products-copy {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .products-copy p {
+      color: #68766d;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .product-tag {
+      background: var(--light-green);
+      color: var(--green);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .product-feature {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 35px;
+      align-items: center;
+      background: #f7f9f5;
+      padding: 28px;
+      border-radius: 24px;
+      margin-top: 45px;
+    }
+
+    .product-feature img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 17px;
+    }
+
+    .product-feature h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--deep-green);
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    .product-feature p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .product-feature .btn {
+      margin-top: 8px;
+    }
+
+    /* BUY SECTION */
+
+    .buy {
+      padding: 85px 0;
+      color: #fff;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.09), transparent 28%),
+        linear-gradient(135deg, #164b35, #0e3928);
+    }
+
+    .buy-content {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .buy .section-title {
+      color: #fff;
+    }
+
+    .buy .section-subtitle {
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 30px;
+    }
+
+    .buy-platforms {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .buy-platforms .btn {
+      min-width: 160px;
+      background: #fff;
+      color: var(--green);
+      border: 2px solid #fff;
+    }
+
+    .buy-platforms .btn:hover {
+      background: #e4bd78;
+      border-color: #e4bd78;
+      transform: translateY(-4px);
+    }
+
+    .cta-message {
+      margin-top: 30px;
+      color: #f2d9a9;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #f8faf6;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-intro {
+      background: var(--green);
+      color: #fff;
+      border-radius: 22px;
+      padding: 35px;
+      min-height: 100%;
+    }
+
+    .contact-intro h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 35px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      color: #f4dfb5;
+    }
+
+    .contact-intro p {
+      color: rgba(255,255,255,0.83);
+      font-size: 14px;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      background: #fff;
+      padding: 19px;
+      border-radius: 15px;
+      border: 1px solid #edf0e9;
+      box-shadow: 0 5px 18px rgba(31,69,45,0.04);
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--light-green);
+      color: var(--green);
+      border-radius: 12px;
+    }
+
+    .contact-text h4 {
+      font-size: 13px;
+      color: var(--deep-green);
+      margin-bottom: 3px;
+    }
+
+    .contact-text p,
+    .contact-text a {
+      font-size: 12px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .contact-text a:hover {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: #0d3324;
+      color: #dce8de;
+      padding: 60px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 55px;
+      padding-bottom: 35px;
+    }
+
+    .footer .logo-text {
+      display: inline-block;
+      color: #f2d9a9;
+      font-size: 39px;
+      margin-bottom: 12px;
+    }
+
+    .footer-description {
+      max-width: 400px;
+      color: #bdcfc2;
+      font-size: 14px;
+    }
+
+    .footer-company {
+      color: #f2d9a9;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .footer-section h4 {
+      color: #f2d9a9;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 9px;
+    }
+
+    .footer-section a {
+      color: #c6d5ca;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #f2d9a9;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 20px;
+      text-align: center;
+      color: #b8c9bd;
+      font-size: 12px;
+    }
+
+    /* MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background: #fff;
+      max-width: 520px;
+      margin: 5vh auto;
+      padding: 28px;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-content h2 {
+      color: var(--green);
+      font-family: 'Playfair Display', Georgia, serif;
+      margin-bottom: 15px;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 13px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content p {
+      color: var(--muted);
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      border: 0;
+      background: transparent;
+      color: var(--green);
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .nav-menu {
+        gap: 17px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-content {
+        gap: 30px;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-container {
+        min-height: 68px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 18px 25px 25px;
+        background: #fff;
+        box-shadow: 0 12px 20px rgba(0,0,0,0.09);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu > li {
+        padding: 12px 0;
+        border-bottom: 1px solid #edf0e9;
+      }
+
+      .nav-link {
+        display: block;
+      }
+
+      .nav-shop {
+        display: inline-block;
+        width: fit-content;
+      }
+
+      .dropdown-menu {
+        position: static;
+        margin-top: 10px;
+        width: 100%;
+        box-shadow: none;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .hero {
+        min-height: 580px;
+        background:
+          linear-gradient(90deg, rgba(10,43,28,0.93), rgba(10,43,28,0.68)),
+          url("images/rolled_oats.jpg") center/cover no-repeat,
+          #173f2c;
+      }
+
+      .hero-content {
+        padding: 75px 0 85px;
+      }
+
+      .hero-title {
+        font-size: 48px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-stats {
+        gap: 25px;
+      }
+
+      .stat-number {
+        font-size: 25px;
+      }
+
+      .promise-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .promise-item {
+        justify-content: flex-start;
+        max-width: 280px;
+        margin: auto;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image,
+      .about-image img {
+        min-height: 260px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+      }
+
+      .benefit-icon {
+        height: 130px;
+      }
+
+      .benefit-content {
+        padding: 15px;
+      }
+
+      .benefit-content h3 {
+        font-size: 14px;
+      }
+
+      .benefit-content p {
+        font-size: 12px;
+      }
+
+      .product-feature {
+        grid-template-columns: 1fr;
+        padding: 18px;
+      }
+
+      .product-feature img {
+        height: 240px;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-links {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      .hero-title {
+        font-size: 41px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-icon {
+        height: 190px;
+      }
+
+      .buy-platforms .btn {
+        width: 100%;
+      }
+
+      .footer-links {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSZKVJ7JHP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-TSZKVJ7JHP');
-</script>
-    <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="9f3IQgsrOEcZeY" async></script>
+<body>
 
-  
-    
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const dropdownToggles = document.querySelectorAll(".dropdown > a");
+  <!-- NAVIGATION -->
 
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener("click", function (e) {
-      // Only activate on mobile
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const menu = this.nextElementSibling;
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          // close any other open dropdowns
-          document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
-          menu.style.display = "block";
-        }
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo-text">Graina</a>
+
+      <ul class="nav-menu" id="navMenu">
+
+        <li>
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+
+        <li>
+          <a href="#benefits" class="nav-link">Benefits</a>
+        </li>
+
+        <li>
+          <a href="https://pages.razorpay.com/stores/graina"
+             class="nav-link nav-shop">
+            Shop Products
+          </a>
+        </li>
+
+        <li class="dropdown" id="recipeDropdown">
+
+          <a href="recipes.html" class="nav-link" id="recipeToggle">
+            Recipes <i class="fas fa-chevron-down"></i>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="recipes.html">All Recipes</a></li>
+            <li><a href="recipes-millet.html">How to Cook Fluffy Millets</a></li>
+            <li><a href="recipes-lemon-millet.html">Lemon Millet Rice</a></li>
+            <li><a href="recipes-millet-khichdi.html">Millet Khichdi</a></li>
+            <li><a href="recipes-millet-porridge.html">Millet Porridge</a></li>
+          </ul>
+
+        </li>
+
+        <li>
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+
+      </ul>
+
+      <button class="hamburger" id="hamburger"
+              aria-label="Toggle navigation"
+              aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-text">
+
+        <div class="hero-badge">
+          <i class="fas fa-seedling"></i>
+          GOOD FOOD, GOOD LIVING
+        </div>
+
+        <h1 class="hero-title">
+          Graina
+          <span>Nature in Every Grain.</span>
+        </h1>
+
+        <p class="hero-description">
+          Discover wholesome oats, millets and natural grains
+          that bring goodness to your everyday meals.
+          Make every meal a step towards a healthier lifestyle.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="https://pages.razorpay.com/stores/graina"
+             class="btn btn-primary">
+            Explore Products
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <a href="#about" class="btn btn-secondary">
+            Discover Graina
+            <i class="fas fa-leaf"></i>
+          </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div class="stat-item">
+            <div class="stat-number">Natural</div>
+            <div class="stat-label">Food Choices</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number">Oats</div>
+            <div class="stat-label">Everyday Goodness</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number">Millets</div>
+            <div class="stat-label">Traditional Grains</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BRAND PROMISE -->
+
+  <section class="promise-strip">
+
+    <div class="promise-grid">
+
+      <div class="promise-item">
+        <i class="fas fa-leaf"></i>
+        <span>Thoughtful Food Choices</span>
+      </div>
+
+      <div class="promise-item">
+        <i class="fas fa-wheat-awn"></i>
+        <span>Oats, Millets & Grains</span>
+      </div>
+
+      <div class="promise-item">
+        <i class="fas fa-heart"></i>
+        <span>Made for Everyday Living</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+
+  <section id="about" class="section about">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-kicker">Welcome to Graina</span>
+
+        <h2 class="section-title">
+          A Better Way to Enjoy Everyday Food
+        </h2>
+
+        <p class="section-subtitle">
+          Bringing you natural grains for a wholesome lifestyle.
+        </p>
+
+      </div>
+
+      <div class="about-content">
+
+        <div class="about-image">
+          <img src="images/rolled_oats.jpg"
+               alt="Graina natural oats and grains"
+               loading="lazy">
+        </div>
+
+        <div class="about-text">
+
+          <p class="about-description">
+            Graina brings you a selection of oats, millets and
+            natural grains to enrich your everyday meals.
+            Our commitment to quality focuses on carefully
+            selected ingredients and preserving their natural
+            goodness and nutritional value.
+          </p>
+
+          <div class="features-grid">
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Natural Ingredients</h3>
+                <p>Thoughtfully selected food ingredients.</p>
+              </div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Everyday Nutrition</h3>
+                <p>Grains and millets for daily meals.</p>
+              </div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="feature-content">
+                <h3>For the Family</h3>
+                <p>Food choices for everyday family meals.</p>
+              </div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Wholesome Choices</h3>
+                <p>Simple ingredients for varied recipes.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HEALTH BENEFITS -->
+
+  <section id="benefits" class="section benefits">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-kicker">Goodness of Grains</span>
+
+        <h2 class="section-title">Discover the Benefits</h2>
+
+        <p class="section-subtitle">
+          Make wholesome grains part of your everyday food choices.
+        </p>
+
+      </div>
+
+      <div class="benefits-grid">
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+            <img src="images/weight_loss.png"
+                 alt="High fibre food"
+                 loading="lazy">
+          </div>
+
+          <div class="benefit-content">
+            <h3>Supports a Balanced Diet</h3>
+            <p>
+              Fibre-rich grains can be part of a balanced
+              eating pattern and satisfying meals.
+            </p>
+            <span class="benefit-highlight">Fibre Rich Choices</span>
+          </div>
+
+        </div>
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+            <img src="images/blood_sugar.png"
+                 alt="Millets and grains"
+                 loading="lazy">
+          </div>
+
+          <div class="benefit-content">
+            <h3>Explore Whole Grains</h3>
+            <p>
+              Discover a variety of grains and millets
+              to add variety to your daily meals.
+            </p>
+            <span class="benefit-highlight">Whole Grain Goodness</span>
+          </div>
+
+        </div>
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+            <img src="images/kids.jpg"
+                 alt="Family food"
+                 loading="lazy">
+          </div>
+
+          <div class="benefit-content">
+            <h3>Family Meal Ideas</h3>
+            <p>
+              Create delicious breakfast, lunch and
+              dinner recipes using wholesome grains.
+            </p>
+            <span class="benefit-highlight">Everyday Meals</span>
+          </div>
+
+        </div>
+
+        <div class="benefit-card">
+
+          <div class="benefit-icon">
+            <img src="images/energy.png"
+                 alt="Nutritious food"
+                 loading="lazy">
+          </div>
+
+          <div class="benefit-content">
+            <h3>Wholesome Nutrition</h3>
+            <p>
+              Enjoy the variety and nutritional goodness
+              of oats, millets and other grains.
+            </p>
+            <span class="benefit-highlight">Daily Goodness</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+
+  <section class="section products-intro" id="products">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-kicker">Explore Our Range</span>
+
+        <h2 class="section-title">Goodness in Every Grain</h2>
+
+        <p class="section-subtitle">
+          Discover wholesome ingredients for your everyday kitchen.
+        </p>
+
+      </div>
+
+      <div class="products-copy">
+
+        <p>
+          At Graina, we bring you wholesome, nutrient-rich products
+          designed to support a balanced lifestyle. Our range
+          includes carefully sourced grains and millets, with a
+          focus on natural goodness in every bite.
+        </p>
+
+        <div class="product-tags">
+          <span class="product-tag">Whole Grains</span>
+          <span class="product-tag">Foxtail Millet</span>
+          <span class="product-tag">Barnyard Millet</span>
+          <span class="product-tag">Brown Top Millet</span>
+          <span class="product-tag">Oats</span>
+          <span class="product-tag">Millet Flours</span>
+          <span class="product-tag">Ready-to-Cook Mixes</span>
+        </div>
+
+        <p>
+          Whether you are a fitness enthusiast, a busy professional
+          or a family looking for variety in everyday meals,
+          explore Graina products for your kitchen.
+        </p>
+
+        <p>
+          <em>Our mission is simple — nourishing your health,
+          one grain at a time.</em>
+        </p>
+
+      </div>
+
+      <!-- FEATURED PRODUCT -->
+
+      <div class="product-feature">
+
+        <img src="images/rolled_oats.jpg"
+             alt="Graina Rolled Oats"
+             loading="lazy">
+
+        <div>
+
+          <span class="section-kicker">A Graina Favourite</span>
+
+          <h3>Rolled Oats</h3>
+
+          <p>
+            Make breakfast simple and wholesome with Graina
+            Rolled Oats. A versatile kitchen ingredient for
+            porridge, overnight oats, smoothies and more.
+          </p>
+
+          <a href="https://pages.razorpay.com/stores/graina"
+             class="btn btn-primary">
+            Explore Products
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <button class="btn btn-secondary"
+                  style="background:var(--green);border-color:var(--green);margin-top:12px;"
+                  onclick="openModal('productModal')">
+            Quick View
+            <i class="fas fa-eye"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCT QUICK VIEW MODAL -->
+
+  <div id="productModal" class="modal"
+       role="dialog" aria-modal="true"
+       aria-labelledby="productModalTitle">
+
+    <div class="modal-content">
+
+      <button class="close-btn"
+              onclick="closeModal('productModal')"
+              aria-label="Close">
+        &times;
+      </button>
+
+      <h2 id="productModalTitle">Graina Rolled Oats</h2>
+
+      <img src="images/rolled_oats.jpg"
+           alt="Graina Rolled Oats">
+
+      <p>
+        Graina Rolled Oats are a versatile breakfast ingredient
+        for porridge, overnight oats and many everyday recipes.
+      </p>
+
+      <p><strong>Ingredients:</strong> 100% Rolled Oats</p>
+
+      <p>
+        <a href="https://pages.razorpay.com/stores/graina"
+           class="btn btn-primary">
+          View Products
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- WHERE TO BUY -->
+
+  <section id="buy" class="buy">
+
+    <div class="container">
+
+      <div class="buy-content">
+
+        <span class="section-kicker">Bring Graina Home</span>
+
+        <h2 class="section-title">Where to Buy</h2>
+
+        <p class="section-subtitle">
+          Choose your preferred platform and explore Graina products.
+        </p>
+
+        <div class="buy-platforms">
+
+          <a href="https://www.amazon.in/stores/Graina/page/47A7EE06-CF34-4ADC-BAC9-D5A3C07EEEF0"
+             class="btn"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fab fa-amazon"></i>
+            Amazon
+          </a>
+
+          <a href="https://wa.me/919391642155"
+             class="btn"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+          </a>
+
+          <a href="https://rzp.io/rzp/Bb74POZx"
+             class="btn"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="fas fa-store"></i>
+            My Store
+          </a>
+
+        </div>
+
+        <div class="cta-message">
+          "Try Graina once – you will feel the difference!"
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+  <section id="contact" class="section contact">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-kicker">We're Here for You</span>
+
+        <h2 class="section-title">Let's Stay Connected</h2>
+
+        <p class="section-subtitle">
+          Have a question? We'd be happy to hear from you.
+        </p>
+
+      </div>
+
+      <div class="contact-content">
+
+        <div class="contact-intro">
+
+          <h2>Connect With Graina</h2>
+
+          <p>
+            For product enquiries, orders and customer support,
+            reach out to our team. We look forward to connecting
+            with you.
+          </p>
+
+          <br>
+
+          <a href="mailto:support@graina.in"
+             class="btn btn-primary">
+            Email Our Team
+            <i class="fas fa-envelope"></i>
+          </a>
+
+        </div>
+
+        <div class="contact-details">
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Business Name</h4>
+              <p>Acinom Retail Traders LLP</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Phone / WhatsApp</h4>
+              <p><a href="tel:+919391642155">+91 93916 42155</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Website</h4>
+              <p><a href="https://www.graina.in">www.graina.in</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Address</h4>
+              <p>Pudur, Kodimial Mandal, Jagtial, Telangana – 505501</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p><a href="mailto:support@graina.in">support@graina.in</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo-text">Graina</a>
+
+          <p class="footer-description">
+            Bringing you oats, millets and natural grains
+            for a wholesome everyday lifestyle.
+          </p>
+
+          <p class="footer-company">
+            ACINOM RETAIL TRADERS LLP
+          </p>
+
+        </div>
+
+        <div class="footer-links">
+
+          <div class="footer-section">
+
+            <h4>Quick Links</h4>
+
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#benefits">Benefits</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="recipes.html">Recipes</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+
+          </div>
+
+          <div class="footer-section">
+
+            <h4>Legal</h4>
+
+            <ul>
+              <li><a href="privacy_policy.html">Privacy Policy</a></li>
+              <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+              <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Graina / Acinom Retail Traders LLP.
+          All rights reserved.
+        </p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    // Mobile navigation
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const recipeDropdown = document.getElementById('recipeDropdown');
+    const recipeToggle = document.getElementById('recipeToggle');
+
+    hamburger.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Mobile recipe dropdown
+    recipeToggle.addEventListener('click', function (event) {
+      if (window.innerWidth <= 700) {
+        event.preventDefault();
+        recipeDropdown.classList.toggle('open');
       }
     });
-  });
-});
-</script>
 
+    // Close mobile navigation after selecting a link
+    navMenu.querySelectorAll('a').forEach(function (link) {
+      if (link !== recipeToggle) {
+        link.addEventListener('click', function () {
+          navMenu.classList.remove('active');
+          recipeDropdown.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
 
-    
-    
-    
-    <body>
-    
-      <!-- Navigation -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo-text">Graina</a>
-    <ul class="nav-menu">
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="#benefits" class="nav-link">Benefits</a></li>
-      <li><a href="https://pages.razorpay.com/stores/graina" class="nav-link">Products</a></li>
-      
-      <!-- Recipes Dropdown -->
-      <li class="dropdown">
-        <a href="recipes.html" class="nav-link">Recipes </a>
-        <ul class="dropdown-menu">
-          <li><a href="recipes-millet.html">How to Cook Fluffy Millets</a></li>
-          <li><a href="recipes-lemon-millet.html">Lemon Millet Rice</a></li>
-          <li><a href="recipes-millet-khichdi.html">Millet Khichdi</a></li>
-          <li><a href="recipes-millet-porridge.html">Millet Porridge</a></li>
-        </ul>
-      </li>
-      
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </div>
-</nav>
-<style>
-/* Base nav */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    // Product modal
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
 
-.nav-links li {
-  position: relative; /* makes dropdown position relative to each item */
-}
+    // Close modal by clicking outside
+    window.addEventListener('click', function (event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;   /* directly below the parent (e.g., "Recipe") */
-  left: 75%;     /* align with left edge of the word */
-  transform: none; /* remove shifting */
-  background-color: #1a543b;
-  padding: 10px 0;
-  min-width: 200px;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(function (modal) {
+          modal.style.display = 'none';
+        });
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 
-.dropdown-menu li {
-  display: block;
-  padding: 5px 20px;
-}
-
-.dropdown-menu li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #15442f;
-}
-
-/* Show dropdown on hover for desktop */
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
-  display: block;
-}
-
-/* Mobile-friendly (disable hover, enable toggle) */
-@media (max-width: 768px) {
-  .dropdown:hover .dropdown-menu,
-  .dropdown-menu:hover {
-    display: none; /* disable hover on small screens */
-  }
-}
-</style>
-
-<script>
-// Mobile toggle for Recipes dropdown
-document.addEventListener("DOMContentLoaded", function() {
-  const dropBtn = document.querySelector(".dropbtn");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
-
-  dropBtn.addEventListener("click", function(e) {
-    e.preventDefault(); 
-    dropdownMenu.style.display = 
-      dropdownMenu.style.display === "block" ? "none" : "block";
-  });
-});
-</script>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-main">Graina</span>
-                    <span class="title-sub">A Healthy Life with Natural Grains</span>
-                </h1>
-                <p class="hero-description">
-                    Discover the power of 100% natural, chemical-free grains that nourish your body and enrich your everyday meals with wholesome nutrition.
-                </p>
-                <div class="hero-buttons">
-                    <a href="https://pages.razorpay.com/stores/graina" class="btn btn-primary">
-                        <span>Explore Products</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#buy" class="btn btn-secondary">
-                        <span>Shop Now</span>
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Natural</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Chemicals</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Varieties</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Graina</h2>
-                <p class="section-subtitle">Bringing you the finest natural grains for a healthier lifestyle</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-description">
-                        Graina brings you 100% natural, chemical-free grains to enrich your everyday meals. 
-                        Our commitment to quality ensures that every grain is carefully selected and processed 
-                        to maintain its natural goodness and nutritional value.
-                    </p>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>100% Natural Ingredients</h3>
-                                <p>No artificial additives or preservatives</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-dumbbell"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Rich in Fiber & Protein</h3>
-                                <p>Essential nutrients for your daily health</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Safe for All Ages</h3>
-                                <p>Perfect for the entire family</p>
-                            </div>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Wholesome & Digestible</h3>
-                                <p>Easy on your stomach, great for health</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Health Benefits Section -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Health Benefits</h2>
-                <p class="section-subtitle">Discover how our natural grains can transform your health</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/weight_loss.png" alt="Weight Loss">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Supports Weight Loss</h3>
-                        <p>High fiber content helps manage hunger and maintain a healthy weight naturally</p>
-                        <div class="benefit-highlight">High Fiber</div>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/blood_sugar.png" alt="Blood Sugar">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Regulates Blood Sugar</h3>
-                        <p>Perfect for diabetics and those looking to maintain stable blood glucose levels</p>
-                        <div class="benefit-highlight">Diabetic Friendly</div>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/kids.jpg" alt="Kids">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Perfect for Kids</h3>
-                        <p>Easy to digest and chemical-free, making it safe and nutritious for children</p>
-                        <div class="benefit-highlight">Kid Safe</div>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="./images/energy.png" alt="Energy">
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Boosts Energy</h3>
-                        <p>Balanced nutrition provides sustained energy for your daily activities</p>
-                        <div class="benefit-highlight">Energy Boost</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-<section style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; line-height: 1.6;">
-    <h2 style="color: #2E7D32;">About Our Products – Graina</h2>
-    <p>
-        At Graina, we bring you wholesome, nutrient-rich products designed to support a healthy lifestyle.
-        Our range is crafted from carefully sourced, high-quality grains and millets, ensuring natural goodness in every bite.
-        From everyday staples to special dietary blends, we focus on delivering products that are clean, minimally processed,
-        and packed with essential nutrients.
-    </p>
-    <h3>Our offerings include:</h3>
-    <ul>
-        <li><strong>Whole Grains</strong> – Fresh, chemical-free grains such as foxtail millet, barnyard millet, and brown top millet.</li>
-        <li><strong>Healthy Flours & Mixes</strong> – Stone-ground millet flours and ready-to-cook mixes for quick, nutritious meals.</li>
-        <li><strong>Breakfast & Snack Options</strong> – High-fiber oats, millet-based snacks, and other fitness-friendly foods.</li>
-    </ul>
-    <p>
-        Whether you are a fitness enthusiast, a busy professional, or a family looking for healthier alternatives, 
-        Graina products fit seamlessly into your daily routine. We avoid preservatives, artificial flavors, and excess processing, 
-        so you get pure taste and maximum nutrition – just as nature intended.
-    </p>
-    <p><em>Our mission is simple – nourishing your health, one grain at a time.</em></p>
-</section>
-  <!------------------------edited on 7th---------------->
-<!-- Quick View Modal -->
-<div id="productModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('productModal')">&times;</span>
-    <h2>Rolled Oats 1KG</h2>
-    <img src="./images/rolled_oats.jpg" alt="Rolled Oats" style="width: 100%; max-height: 300px; object-fit: cover;">
-    <p>Our premium Rolled Oats are rich in fiber and ideal for a wholesome breakfast. Naturally grown and free from additives.</p>
-    <p><strong>Ingredients:</strong> 100% Rolled Oats</p>
-    <p><strong>Price:</strong> ₹200 <span style="text-decoration: line-through; color: #888;">₹450</span></p>
-  </div>
-</div>
-      <!-------------edited on 7th aug---------------->
-
-    <!-- Where to Buy Section -->
-    <section id="buy" class="buy">
-        <div class="container">
-            <div class="buy-content">
-                <div class="buy-text">
-                    <h2 class="section-title">Where to Buy</h2>
-                    <p class="section-subtitle">Get Graina products from your preferred platform</p>
-                    <div class="buy-platforms">
-                       <a href="https://www.amazon.in/stores/Graina/page/47A7EE06-CF34-4ADC-BAC9-D5A3C07EEEF0" class="btn btn-primary" id="modalBuyAmazon" target="_blank"> Amazon <i class="fab fa-amazon"></i></a>
-                        <a href="https://wa.me/+919391642155" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
-                        <a href="https://rzp.io/rzp/Bb74POZx" class="btn btn-primary" id="modalBuyFlipkart" target="_blank"><i class="fas fa-store"></i><span>My Store</span></a>
-                    </div>
-                    <div class="cta-message">
-                        <p>"Try Graina once – you will feel the difference!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="section-title">Contact Us</h2>
-                    <p class="section-subtitle">Get in touch with us for any queries</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Business Name</h4>
-                                <p>Acinom Retail Traders LLP</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+91 93916 42155</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Website</h4>
-                                <p><a href="http://www.graina.in">www.graina.in</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>Pudur, Kodimial Mandal, Jagtial, Telangana – 505501</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>support@graina.in</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo-text">Graina</span>
-                    <p class="footer-description">
-                        Bringing you 100% natural, chemical-free grains for a healthier lifestyle.
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="#benefits">Benefits</a></li>
-                            <li><a href="https://pages.razorpay.com/stores/graina" class="nav-link">Products</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacy_policy.html" onclick="openModal('privacyModal'); return false;">Privacy Policy</a></li>
-                            <li><a href="terms-and-conditions.html" onclick="openModal('termsModal'); return false;">Terms of Service</a></li>
-                            <li><a href="shipping-policy.html">Shipping & Refund Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Graina / Acinom Retail Traders LLP. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-
-    "
+</body>
+</html>
