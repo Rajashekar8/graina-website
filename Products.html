@@ -1,0 +1,76 @@
+<div class="product-card">
+  <h3>Graina Foxtail Millet</h3>
+  <p>500 g</p>
+  <p>₹120</p>
+
+  <button
+    class="buy-now"
+    onclick="buyProduct('foxtail-500')">
+    Buy Now
+  </button>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+async function buyProduct(productId) {
+  try {
+    const response = await fetch(
+      "YOUR_FIREBASE_FUNCTION_URL/createOrder",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ productId })
+      }
+    );
+
+    const order = await response.json();
+
+    if (!response.ok) {
+      throw new Error(order.error || "Could not create order");
+    }
+
+    const options = {
+      key: "YOUR_RAZORPAY_KEY_ID",
+      amount: order.amount,
+      currency: "INR",
+      name: "Graina",
+      description: order.productName,
+      order_id: order.id,
+
+      handler: async function (payment) {
+        const verifyResponse = await fetch(
+          "YOUR_FIREBASE_FUNCTION_URL/verifyPayment",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payment)
+          }
+        );
+
+        const result = await verifyResponse.json();
+
+        if (verifyResponse.ok && result.verified) {
+          alert("Payment successful! Thank you for shopping with Graina.");
+        } else {
+          alert("Payment verification failed. Please contact Graina support.");
+        }
+      },
+
+      theme: {
+        color: "#214b36"
+      }
+    };
+
+    const checkout = new Razorpay(options);
+    checkout.open();
+
+  } catch (error) {
+    alert(error.message);
+  }
+}
+</script>
