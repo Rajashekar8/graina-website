@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millet Khichdi (Korra Biyyam Khichdi) | Graina Recipes</title>
+  <meta name="description" content="Make comforting foxtail millet khichdi with moong dal, vegetables and gentle Indian spices. An easy Graina recipe with pressure cooker and pot instructions.">
+  <meta name="theme-color" content="#174b35">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --green:#174b35; --green-dark:#103b29; --green-light:#eaf1e9;
+      --cream:#faf8f2; --gold:#bd9656; --text:#29382f; --muted:#748078;
+      --border:#e8ece5; --shadow:0 12px 35px rgba(22,62,41,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:'DM Sans',Arial,sans-serif;color:var(--text);line-height:1.7;background:#fff}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,calc(100% - 36px));margin:auto}
+    .navbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 3px 18px rgba(0,0,0,.035)}
+    .nav-container{max-width:1160px;width:calc(100% - 36px);min-height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand img{height:55px;width:auto;max-width:190px;object-fit:contain;display:block}
+    .nav-links{display:flex;align-items:center;gap:25px;list-style:none}
+    .nav-links a{font-size:13px;font-weight:700;color:#35473b}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{background:var(--green);color:#fff!important;padding:11px 19px;border-radius:30px}
+    .hamburger{display:none;border:0;background:none;color:var(--green);font-size:24px;padding:8px}
+    .hero{background:radial-gradient(ellipse at 85% 15%,rgba(203,174,119,.17),transparent 35%),linear-gradient(125deg,#103b29,#205b40);color:#fff;padding:76px 0 70px}
+    .crumbs{font-size:12px;color:#e7d7b9;margin-bottom:24px}
+    .crumbs a{text-decoration:underline;text-underline-offset:3px}
+    .eyebrow{color:#e7c994;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}
+    h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
+    h1{font-size:clamp(36px,6vw,58px);max-width:780px;margin:13px 0 18px}
+    .hero p{max-width:690px;color:rgba(255,255,255,.84);font-size:16px}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .meta-pill{border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:8px 14px;font-size:12px;color:#f5ead5}
+    .page{padding:54px 0 80px}
+    .intro{max-width:800px;margin:0 auto 35px;text-align:center}
+    .intro h2{font-size:clamp(28px,4vw,38px);color:var(--green-dark);margin-bottom:12px}
+    .intro p{color:var(--muted)}
+    .recipe-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr);gap:28px;align-items:start}
+    .card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 7px 25px rgba(31,69,45,.04)}
+    .card h2{font-size:27px;color:var(--green-dark);margin-bottom:17px}
+    .card h3{font-size:20px;color:var(--green-dark);margin:24px 0 10px}
+    .card p{color:#66746b}
+    .ingredient-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+    .ingredient-list li{padding:10px 0;border-bottom:1px solid #eef1eb;font-size:14px;display:flex;gap:10px;align-items:flex-start}
+    .ingredient-list i{color:var(--gold);font-size:12px;margin-top:6px}
+    .steps{list-style:none;counter-reset:step}
+    .steps li{counter-increment:step;position:relative;padding:0 0 22px 48px;color:#5f6e64}
+    .steps li:before{content:counter(step);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--green-light);color:var(--green);font-weight:800;font-size:13px}
+    .steps li strong{color:var(--green-dark)}
+    .tip{background:#f6f3e9;border-left:4px solid var(--gold);border-radius:10px;padding:16px 18px;margin-top:20px;color:#66583e;font-size:14px}
+    .side-card{background:var(--cream);border:1px solid #eee9dc;border-radius:18px;padding:25px;margin-bottom:18px}
+    .side-card h3{font-size:22px;color:var(--green-dark);margin-bottom:12px}
+    .side-card p,.side-card li{font-size:13px;color:#68766d}
+    .side-card ul{padding-left:18px}
+    .side-card li{margin:7px 0}
+    .quick-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+    .fact{background:#fff;border:1px solid var(--border);border-radius:12px;padding:13px;text-align:center}
+    .fact strong{display:block;color:var(--green);font-size:20px}
+    .fact span{font-size:11px;color:var(--muted)}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:30px;font-size:13px;font-weight:800}
+    .btn-primary{background:var(--green);color:#fff}
+    .btn-outline{border:1px solid var(--green);color:var(--green)}
+    .source-note{font-size:12px;color:#89938c;margin-top:24px;padding-top:16px;border-top:1px solid var(--border)}
+    footer{background:#0d3324;color:#dce8de;padding:28px 0;text-align:center;font-size:12px}
+    footer a{color:#f0d9ac;text-decoration:underline}
+    @media(max-width:780px){
+      .hamburger{display:block}
+      .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:15px 24px 22px;box-shadow:0 12px 20px rgba(0,0,0,.08);flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}
+      .nav-links li{padding:12px 0;border-bottom:1px solid var(--border)}
+      .recipe-layout{grid-template-columns:1fr}
+      .hero{padding:55px 0}
+    }
+    @media(max-width:480px){
+      .ingredient-list{grid-template-columns:1fr}
+      .card{padding:21px}
+      .hero p{font-size:14px}
+      .brand img{height:48px;max-width:160px}
+    }
+    @media print{
+      .navbar,.cta-row,footer{display:none}
+      .hero{background:#fff;color:#111;padding:20px 0}
+      .hero p,.crumbs,.eyebrow{color:#333}
+      .card,.side-card{box-shadow:none;break-inside:avoid}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Recipe",
+    "name":"Graina Foxtail Millet Khichdi (Korra Biyyam Khichdi)",
+    "description":"A comforting one-pot khichdi made with foxtail millet, yellow moong dal, mixed vegetables and Indian spices.",
+    "recipeCuisine":"Indian",
+    "recipeCategory":"Lunch, Dinner",
+    "keywords":"foxtail millet khichdi, korra biyyam khichdi, millet recipe, Graina",
+    "recipeYield":"2 servings",
+    "prepTime":"PT35M",
+    "cookTime":"PT25M",
+    "totalTime":"PT60M",
+    "recipeIngredient":[
+      "1/2 cup hulled foxtail millet (korralu)",
+      "1/2 cup yellow split moong dal",
+      "2 1/2 to 3 cups water",
+      "1 cup mixed vegetables: carrot, beans, peas and capsicum",
+      "1 small tomato, chopped (optional)",
+      "1/4 cup chopped spinach or methi leaves (optional)",
+      "1 1/2 tablespoons ghee or oil",
+      "1 teaspoon grated ginger",
+      "1/2 teaspoon cumin seeds",
+      "1 green chilli, chopped, or 1/4 teaspoon red chilli powder",
+      "1/8 teaspoon turmeric powder",
+      "Salt to taste",
+      "Chopped coriander leaves and lemon juice to finish"
+    ],
+    "recipeInstructions":[
+      {"@type":"HowToStep","text":"Rinse the foxtail millet and moong dal until the water runs mostly clear. Soak for 30 minutes, then drain."},
+      {"@type":"HowToStep","text":"Heat ghee or oil in a pressure cooker. Add cumin seeds and ginger; stir until aromatic."},
+      {"@type":"HowToStep","text":"Add the chopped vegetables and tomato. Sauté for 2 to 3 minutes."},
+      {"@type":"HowToStep","text":"Add turmeric, chilli and salt. Stir, then add the drained millet and dal."},
+      {"@type":"HowToStep","text":"Pour in 2 1/2 cups water and mix. Pressure cook on medium heat for about 2 to 3 whistles; allow pressure to release naturally."},
+      {"@type":"HowToStep","text":"Open the cooker, stir gently and add a little hot water if you prefer a softer consistency. Finish with coriander and lemon juice."}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html" aria-label="Graina home"><img src="https://www.graina.in/images/graina-logo.png" alt="Graina official logo"></a>
+      <button class="hamburger" id="menuButton" aria-label="Toggle navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Shop Products</a></li>
+        <li><a href="recipes.html">All Recipes</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="recipes.html">Recipes</a> &nbsp;›&nbsp; Millet Khichdi</div>
+      <span class="eyebrow">Graina Kitchen · Wholesome everyday cooking</span>
+      <h1>Foxtail Millet Khichdi</h1>
+      <p>A warm, comforting one-pot meal made with Korra Biyyam, yellow moong dal, colourful vegetables and gentle Indian spices. Simple to prepare and lovely for lunch or dinner.</p>
+      <div class="hero-meta">
+        <span class="meta-pill"><i class="far fa-clock"></i> About 60 minutes including soaking</span>
+        <span class="meta-pill"><i class="fas fa-utensils"></i> 2 servings</span>
+        <span class="meta-pill"><i class="fas fa-leaf"></i> Vegetarian</span>
+        <span class="meta-pill"><i class="fas fa-fire"></i> Easy</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="intro">
+        <h2>A nourishing bowl of millet goodness</h2>
+        <p>This Graina-style khichdi brings together foxtail millet and moong dal with vegetables for a soft, satisfying texture. Adjust the water to make it fluffy or pleasantly porridge-like.</p>
+      </section>
+
+      <div class="recipe-layout">
+        <div>
+          <section class="card" id="ingredients">
+            <h2><i class="fas fa-basket-shopping"></i> Ingredients</h2>
+            <p>For 2 servings</p>
+            <ul class="ingredient-list">
+              <li><i class="fas fa-circle"></i><span><strong>1/2 cup</strong> hulled foxtail millet (Korra Biyyam / Korralu)</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1/2 cup</strong> yellow split moong dal</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>2 1/2 to 3 cups</strong> water, as needed</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1 cup</strong> mixed vegetables: carrot, beans, peas and capsicum</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1 small</strong> tomato, chopped (optional)</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1/4 cup</strong> chopped spinach or methi (optional)</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1 1/2 tbsp</strong> ghee or cooking oil</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1 tsp</strong> grated ginger</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1/2 tsp</strong> cumin seeds (jeera)</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1</strong> green chilli, chopped, or chilli powder to taste</span></li>
+              <li><i class="fas fa-circle"></i><span><strong>1/8 tsp</strong> turmeric powder</span></li>
+              <li><i class="fas fa-circle"></i><span>Salt to taste</span></li>
+              <li><i class="fas fa-circle"></i><span>Fresh coriander and a squeeze of lemon to finish</span></li>
+            </ul>
+          </section>
+
+          <section class="card" style="margin-top:22px" id="method">
+            <h2><i class="fas fa-list-check"></i> How to make millet khichdi</h2>
+            <ol class="steps">
+              <li><strong>Wash and soak.</strong> Rinse the foxtail millet and moong dal separately or together until the water runs mostly clear. Soak for about 30 minutes, then drain well.</li>
+              <li><strong>Start the tempering.</strong> Heat ghee or oil in a pressure cooker. Add cumin seeds and let them sizzle. Add grated ginger and green chilli; stir briefly until fragrant.</li>
+              <li><strong>Sauté the vegetables.</strong> Add carrot, beans, peas, capsicum and tomato. Cook for 2 to 3 minutes, stirring so the vegetables are coated with the seasoning.</li>
+              <li><strong>Add spices, millet and dal.</strong> Stir in turmeric, chilli and salt. Add the drained millet and moong dal, and sauté gently for another minute.</li>
+              <li><strong>Pour in water and cook.</strong> Add 2 1/2 cups water and mix. Close the pressure cooker and cook on medium heat for about 2 to 3 whistles. Turn off the heat and allow the pressure to release naturally.</li>
+              <li><strong>Finish and serve.</strong> Open the cooker and stir gently. Add a little hot water if you prefer a softer khichdi. Mix in chopped coriander and a squeeze of lemon. Serve hot.</li>
+            </ol>
+            <div class="tip"><strong>Texture tip:</strong> For a soft, porridge-style khichdi, add a little more hot water after cooking. For a thicker, grainier texture, begin with the lower water quantity and adjust only if needed.</div>
+          </section>
+
+          <section class="card" style="margin-top:22px" id="stovetop">
+            <h2><i class="fas fa-fire-burner"></i> Open-pot method</h2>
+            <p>Follow the same washing, soaking and sautéing steps in a heavy-bottomed pot. Add about 3 cups of water, cover and simmer on low heat, stirring occasionally, until the millet and dal are soft. Add a splash of hot water if the pot becomes too dry before the grains are cooked. Cooking time varies with the millet and the age of the grain, so check for tenderness before serving.</p>
+          </section>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <h3>Recipe at a glance</h3>
+            <div class="quick-facts">
+              <div class="fact"><strong>30 min</strong><span>Soaking time</span></div>
+              <div class="fact"><strong>20–25 min</strong><span>Approx. cooking</span></div>
+              <div class="fact"><strong>2</strong><span>Servings</span></div>
+              <div class="fact"><strong>Easy</strong><span>Skill level</span></div>
+            </div>
+            <p style="margin-top:14px">Cooking time can vary with the cooker, millet variety and how long the grains have been stored.</p>
+          </div>
+          <div class="side-card">
+            <h3>Graina kitchen tips</h3>
+            <ul>
+              <li>Choose hulled, food-grade foxtail millet for this recipe.</li>
+              <li>Soaking helps the grains cook more evenly and can shorten cooking time.</li>
+              <li>Chop vegetables into small, similar-sized pieces.</li>
+              <li>For a milder flavour, skip the chilli and use ginger and cumin.</li>
+              <li>For a richer finish, add a small drizzle of ghee just before serving.</li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>Serve it with</h3>
+            <ul>
+              <li>Plain curd or raita</li>
+              <li>Lemon or mango pickle</li>
+              <li>Roasted papad</li>
+              <li>Freshly chopped coriander</li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>Try Graina millets</h3>
+            <p>Explore foxtail, little, kodo and other traditional grains for your everyday recipes.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="products.html">Shop Graina <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="cta-row" style="justify-content:center;margin-top:36px">
+        <a class="btn btn-primary" href="recipes.html"><i class="fas fa-book-open"></i> More Graina Recipes</a>
+        <a class="btn btn-outline" href="index.html"><i class="fas fa-house"></i> Back to Home</a>
+        <button class="btn btn-outline" type="button" onclick="window.print()"><i class="fas fa-print"></i> Print Recipe</button>
+      </div>
+
+      <p class="source-note">Recipe inspiration: <a href="https://www.indianhealthyrecipes.com/millet-khichdi-korra-khichdi-korra-biyyam-khichdi/" target="_blank" rel="noopener noreferrer" style="color:#55745f;text-decoration:underline">Millet Khichdi (Foxtail Millet Khichdi) – Swasthi's Recipes</a>. This Graina page is an independently written adaptation; quantities and method have been presented for this page. Cooking results may vary by millet type and equipment.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Graina · Acinom Retail Traders LLP &nbsp; | &nbsp; <a href="index.html">www.graina.in</a> &nbsp; | &nbsp; <a href="mailto:support@graina.in">Customer Support</a></div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.innerHTML = '<i class="fas fa-bars"></i>';
+    }));
+  </script>
+</body>
+</html>
