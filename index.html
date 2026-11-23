@@ -1753,5 +1753,503 @@
     });
   </script>
 
+<!-- GRAINA LOGIN / SIGN UP BUTTON -->
+<button id="grainaLoginOpen" class="graina-login-trigger">
+  <span>👤</span> Login / Sign Up
+</button>
+
+<!-- GRAINA AUTH POPUP -->
+<div id="grainaAuthModal" class="graina-auth-overlay" aria-hidden="true">
+  <div class="graina-auth-box" role="dialog" aria-modal="true" aria-labelledby="grainaAuthTitle">
+
+    <button type="button" class="graina-auth-close" id="grainaAuthClose" aria-label="Close">&times;</button>
+
+    <div class="graina-auth-logo">
+      <img src="https://www.graina.in/images/graina-logo.png" alt="Graina Logo">
+    </div>
+
+    <h2 id="grainaAuthTitle">Welcome to Graina</h2>
+    <p class="graina-auth-subtitle">Sign in or create your account</p>
+
+    <!-- LOGIN OPTIONS -->
+    <div id="grainaLoginOptions">
+
+      <button type="button" id="grainaGoogleLogin" class="graina-google-btn">
+        <span class="google-letter">G</span>
+        Continue with Google
+      </button>
+
+      <div class="graina-auth-divider"><span>OR</span></div>
+
+      <label for="grainaPhone">Mobile Number</label>
+      <input type="tel" id="grainaPhone" placeholder="+91 9876543210" autocomplete="tel">
+
+      <button type="button" id="grainaSendOtp" class="graina-primary-btn">
+        Continue with Phone
+      </button>
+
+      <div id="graina-recaptcha"></div>
+
+    </div>
+
+    <!-- OTP SECTION -->
+    <div id="grainaOtpSection" hidden>
+      <label for="grainaOtp">Enter OTP</label>
+      <input type="text" id="grainaOtp" placeholder="Enter 6-digit OTP"
+             inputmode="numeric" maxlength="6" autocomplete="one-time-code">
+
+      <button type="button" id="grainaVerifyOtp" class="graina-primary-btn">
+        Verify OTP
+      </button>
+
+      <button type="button" id="grainaBackToLogin" class="graina-text-btn">
+        Change mobile number
+      </button>
+    </div>
+
+    <!-- LOGGED-IN SECTION -->
+    <div id="grainaLoggedIn" hidden>
+      <div class="graina-user-icon">✓</div>
+      <h3 id="grainaUserName">Welcome!</h3>
+      <p id="grainaUserEmail"></p>
+      <button type="button" id="grainaMyAccount" class="graina-primary-btn">
+        My Account
+      </button>
+      <button type="button" id="grainaLogout" class="graina-text-btn">
+        Sign Out
+      </button>
+    </div>
+
+    <p id="grainaAuthMessage" class="graina-auth-message" role="status" aria-live="polite"></p>
+
+    <p class="graina-auth-terms">
+      By continuing, you agree to our
+      <a href="https://www.graina.in/terms-and-conditions.html">Terms</a>
+      and
+      <a href="https://www.graina.in/privacy-policy.html">Privacy Policy</a>.
+    </p>
+
+  </div>
+</div>
+
+<style>
+.graina-login-trigger {
+  background: #1a543b;
+  color: white;
+  border: 1px solid #1a543b;
+  border-radius: 30px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.graina-login-trigger:hover {
+  background: #123e2c;
+}
+
+.graina-auth-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,.65);
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.graina-auth-overlay.active {
+  display: flex;
+}
+
+.graina-auth-box {
+  background: #fffdf7;
+  width: 100%;
+  max-width: 410px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 20px;
+  padding: 32px 27px 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  animation: grainaPopup .25s ease;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes grainaPopup {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.graina-auth-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  color: #555;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.graina-auth-logo img {
+  width: 145px;
+  max-height: 65px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.graina-auth-box h2 {
+  color: #1a543b;
+  font-size: 25px;
+  margin: 8px 0;
+}
+
+.graina-auth-subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.graina-auth-box label {
+  display: block;
+  text-align: left;
+  color: #333;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.graina-auth-box input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9ded8;
+  background: white;
+  border-radius: 9px;
+  padding: 14px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.graina-auth-box input:focus {
+  border-color: #1a543b;
+  box-shadow: 0 0 0 2px rgba(26,84,59,.1);
+}
+
+.graina-google-btn,
+.graina-primary-btn {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.graina-google-btn {
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.google-letter {
+  font-size: 21px;
+  font-weight: 800;
+  color: #4285F4;
+}
+
+.graina-primary-btn {
+  background: #1a543b;
+  color: white;
+  border: none;
+  margin-top: 5px;
+}
+
+.graina-primary-btn:hover {
+  background: #123e2c;
+}
+
+.graina-text-btn {
+  background: transparent;
+  color: #1a543b;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.graina-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #999;
+  font-size: 12px;
+  margin: 20px 0;
+}
+
+.graina-auth-divider::before,
+.graina-auth-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e5e5e5;
+}
+
+.graina-auth-message {
+  color: #b42318;
+  font-size: 13px;
+  min-height: 18px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.graina-auth-terms {
+  color: #888;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
+.graina-auth-terms a {
+  color: #1a543b;
+  font-weight: 600;
+}
+
+.graina-user-icon {
+  margin: 15px auto;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #e6f2e9;
+  color: #1a543b;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+}
+
+#grainaLoggedIn h3 {
+  color: #1a543b;
+}
+
+@media(max-width:480px) {
+  .graina-auth-box {
+    padding: 30px 20px 20px;
+  }
+}
+</style>
+
+<script type="module">
+import { initializeApp } from
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithPhoneNumber,
+  RecaptchaVerifier,
+  onAuthStateChanged,
+  signOut
+} from
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// YOUR FIREBASE CONFIGURATION
+const firebaseConfig = {
+  apiKey: "AIzaSyDvX_vJ7mhgmbjghtpoSyuPZEhKNUbMH6s",
+  authDomain: "grainaindia.firebaseapp.com",
+  projectId: "grainaindia",
+  storageBucket: "grainaindia.firebasestorage.app",
+  messagingSenderId: "615336891540",
+  appId: "1:615336891540:web:acf8dd8b510a26924b5081",
+  measurementId: "G-Q8EQVYXWLV"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const modal = document.getElementById("grainaAuthModal");
+const openBtn = document.getElementById("grainaLoginOpen");
+const closeBtn = document.getElementById("grainaAuthClose");
+
+const loginOptions = document.getElementById("grainaLoginOptions");
+const otpSection = document.getElementById("grainaOtpSection");
+const loggedInSection = document.getElementById("grainaLoggedIn");
+const message = document.getElementById("grainaAuthMessage");
+
+let recaptchaVerifier = null;
+let confirmationResult = null;
+
+function showMessage(text, success = false) {
+  message.textContent = text;
+  message.style.color = success ? "#16803c" : "#b42318";
+}
+
+function openModal() {
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeModal() {
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+openBtn.addEventListener("click", openModal);
+closeBtn.addEventListener("click", closeModal);
+
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && modal.classList.contains("active")) {
+    closeModal();
+  }
+});
+
+// GOOGLE LOGIN / SIGN UP
+document.getElementById("grainaGoogleLogin")
+  .addEventListener("click", async () => {
+    try {
+      showMessage("Opening Google sign-in...");
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+
+      await signInWithPopup(auth, provider);
+      showMessage("Google sign-in successful!", true);
+    } catch (error) {
+      showMessage(error.message);
+    }
+  });
+
+// PHONE OTP
+document.getElementById("grainaSendOtp")
+  .addEventListener("click", async () => {
+    const phoneInput = document.getElementById("grainaPhone");
+    let phone = phoneInput.value.trim();
+
+    // Add India's country code if a 10-digit number was entered.
+    if (/^[6-9]\d{9}$/.test(phone)) {
+      phone = "+91" + phone;
+    }
+
+    if (!/^\+[1-9]\d{7,14}$/.test(phone)) {
+      showMessage("Please enter a valid mobile number with country code.");
+      return;
+    }
+
+    try {
+      showMessage("Sending OTP...");
+
+      if (!recaptchaVerifier) {
+        recaptchaVerifier = new RecaptchaVerifier(
+          auth,
+          "graina-recaptcha",
+          { size: "invisible" }
+        );
+      }
+
+      confirmationResult = await signInWithPhoneNumber(
+        auth,
+        phone,
+        recaptchaVerifier
+      );
+
+      loginOptions.hidden = true;
+      otpSection.hidden = false;
+      showMessage("OTP sent to " + phone, true);
+
+    } catch (error) {
+      showMessage(error.message);
+
+      if (recaptchaVerifier) {
+        recaptchaVerifier.clear();
+        recaptchaVerifier = null;
+      }
+    }
+  });
+
+// VERIFY OTP
+document.getElementById("grainaVerifyOtp")
+  .addEventListener("click", async () => {
+    const otp = document.getElementById("grainaOtp").value.trim();
+
+    if (!/^\d{6}$/.test(otp)) {
+      showMessage("Please enter the 6-digit OTP.");
+      return;
+    }
+
+    if (!confirmationResult) {
+      showMessage("Please request a new OTP.");
+      return;
+    }
+
+    try {
+      await confirmationResult.confirm(otp);
+      showMessage("Phone verification successful!", true);
+    } catch (error) {
+      showMessage("OTP verification failed. Please check the code and try again.");
+    }
+  });
+
+// CHANGE PHONE NUMBER
+document.getElementById("grainaBackToLogin")
+  .addEventListener("click", () => {
+    otpSection.hidden = true;
+    loginOptions.hidden = false;
+    confirmationResult = null;
+    showMessage("");
+  });
+
+// AUTHENTICATION STATUS
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    loginOptions.hidden = true;
+    otpSection.hidden = true;
+    loggedInSection.hidden = false;
+
+    document.getElementById("grainaUserName").textContent =
+      "Welcome, " + (user.displayName || "Graina Customer") + "!";
+
+    document.getElementById("grainaUserEmail").textContent =
+      user.email || user.phoneNumber || "";
+
+    openBtn.textContent = "My Account";
+  } else {
+    loginOptions.hidden = false;
+    otpSection.hidden = true;
+    loggedInSection.hidden = true;
+    openBtn.innerHTML = "👤 Login / Sign Up";
+  }
+});
+
+// MY ACCOUNT - CHANGE THIS TO YOUR ACCOUNT PAGE
+document.getElementById("grainaMyAccount")
+  .addEventListener("click", () => {
+    window.location.href = "/account.html";
+  });
+
+// SIGN OUT
+document.getElementById("grainaLogout")
+  .addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      confirmationResult = null;
+      showMessage("You have signed out.", true);
+    } catch (error) {
+      showMessage(error.message);
+    }
+  });
+
+</script>
+
 </body>
 </html>
