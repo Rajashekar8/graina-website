@@ -186,6 +186,25 @@
       color: #fff;
     }
 
+    .nav-login {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 30px;
+      background: var(--green);
+      color: #fff;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .nav-login:hover {
+      background: var(--green-dark);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -1118,7 +1137,7 @@
         <li><a href="#benefits" class="nav-link">Benefits</a></li>
 
         <li>
-          <a href="https://pages.razorpay.com/stores/graina"
+          <a href="products.html"
              class="nav-link nav-shop">
             Shop Products
           </a>
@@ -1141,6 +1160,13 @@
         </li>
 
         <li><a href="#contact" class="nav-link">Contact</a></li>
+
+        <li>
+          <a href="#" id="grainaLoginOpen" class="nav-link nav-login"
+             aria-haspopup="dialog" aria-controls="grainaAuthModal">
+            <i class="fas fa-user"></i> Login / Sign Up
+          </a>
+        </li>
 
       </ul>
 
@@ -1181,7 +1207,7 @@
 
         <div class="hero-buttons">
 
-          <a href="https://pages.razorpay.com/stores/graina"
+          <a href="products.html"
              class="btn btn-gold">
             Explore Products
             <i class="fas fa-arrow-right"></i>
@@ -1451,7 +1477,7 @@
 
       <div class="product-cta">
 
-        <a href="https://pages.razorpay.com/stores/graina"
+        <a href="products.html"
            class="btn btn-gold">
           View All Products
           <i class="fas fa-arrow-right"></i>
@@ -1528,7 +1554,7 @@
           WhatsApp
         </a>
 
-        <a href="https://rzp.io/rzp/Bb74POZx"
+        <a href="products.html"
            class="btn"
            target="_blank"
            rel="noopener noreferrer">
@@ -1753,11 +1779,6 @@
     });
   </script>
 
-<!-- GRAINA LOGIN / SIGN UP BUTTON -->
-<button id="grainaLoginOpen" class="graina-login-trigger">
-  <span>👤</span> Login / Sign Up
-</button>
-
 <!-- GRAINA AUTH POPUP -->
 <div id="grainaAuthModal" class="graina-auth-overlay" aria-hidden="true">
   <div class="graina-auth-box" role="dialog" aria-modal="true" aria-labelledby="grainaAuthTitle">
@@ -1826,28 +1847,13 @@
       By continuing, you agree to our
       <a href="https://www.graina.in/terms-and-conditions.html">Terms</a>
       and
-      <a href="https://www.graina.in/privacy-policy.html">Privacy Policy</a>.
+      <a href="https://www.graina.in/privacy_policy.html">Privacy Policy</a>.
     </p>
 
   </div>
 </div>
 
 <style>
-.graina-login-trigger {
-  background: #1a543b;
-  color: white;
-  border: 1px solid #1a543b;
-  border-radius: 30px;
-  padding: 11px 20px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.graina-login-trigger:hover {
-  background: #123e2c;
-}
-
 .graina-auth-overlay {
   display: none;
   position: fixed;
@@ -2102,7 +2108,16 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
 }
 
-openBtn.addEventListener("click", openModal);
+openBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  openModal();
+
+  // Close the mobile navigation after opening the sign-in popup.
+  document.getElementById("navMenu").classList.remove("active");
+  document.getElementById("recipeDropdown").classList.remove("open");
+  document.getElementById("hamburger").setAttribute("aria-expanded", "false");
+});
+
 closeBtn.addEventListener("click", closeModal);
 
 modal.addEventListener("click", (event) => {
@@ -2222,16 +2237,16 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("grainaUserEmail").textContent =
       user.email || user.phoneNumber || "";
 
-    openBtn.textContent = "My Account";
+    openBtn.innerHTML = '<i class="fas fa-user-circle"></i> My Account';
   } else {
     loginOptions.hidden = false;
     otpSection.hidden = true;
     loggedInSection.hidden = true;
-    openBtn.innerHTML = "👤 Login / Sign Up";
+    openBtn.innerHTML = '<i class="fas fa-user"></i> Login / Sign Up';
   }
 });
 
-// MY ACCOUNT - CHANGE THIS TO YOUR ACCOUNT PAGE
+// MY ACCOUNT - create account.html before enabling this destination.
 document.getElementById("grainaMyAccount")
   .addEventListener("click", () => {
     window.location.href = "/account.html";
