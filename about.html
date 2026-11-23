@@ -1,190 +1,700 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Graina</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | Graina - Honest Food, Healthier Living</title>
+  <meta name="description" content="Get in touch with Graina. Contact Acinom Retail Traders LLP for product enquiries, orders and customer support.">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #faf9f5;
+      color: #34443a;
+      line-height: 1.7;
     }
 
-    header {
-      background-color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #eee;
-    }
-
-    .logo img {
-      height: 60px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #1a543b;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1, h2 {
-      color: #1a543b;
-    }
-
-    .section {
-      margin-bottom: 2rem;
-    }
-
-    .contact-details p,
-    .contact-form label {
-      margin: 0.5rem 0;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.25rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .contact-form button {
-      background-color: #1a543b;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background-color: #14442f;
+    :root {
+      --green: #1a543b;
+      --dark-green: #103d2b;
+      --light-green: #eaf2e9;
+      --cream: #f7f3e9;
+      --gold: #c59a50;
+      --text: #34443a;
+      --muted: #718076;
     }
 
     a {
-      color: #1a543b;
+      color: var(--green);
+    }
+
+    /* HEADER */
+
+    .site-header {
+      background: var(--green);
+      padding: 17px 20px;
+      text-align: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+    }
+
+    .site-header img {
+      max-height: 65px;
+      max-width: 210px;
+      width: auto;
+      vertical-align: middle;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 90% 20%, rgba(197,154,80,0.16), transparent 30%),
+        linear-gradient(135deg, #edf3e9, #fbf7ed);
+      padding: 75px 20px 85px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #fff;
+      color: var(--green);
+      padding: 7px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      color: var(--dark-green);
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.15;
+      margin: 22px 0 15px;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: #b4873d;
+    }
+
+    .hero p {
+      color: #65746a;
+      font-size: 17px;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 27px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .hero-button:hover {
+      background: var(--dark-green);
+      transform: translateY(-2px);
+    }
+
+    /* MAIN CONTENT */
+
+    .main-container {
+      max-width: 1100px;
+      margin: -30px auto 60px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin: 65px 0 30px;
+    }
+
+    .section-heading .eyebrow {
+      color: #b4873d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      color: var(--dark-green);
+      font-size: 34px;
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* CARDS */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .info-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid #edf0e9;
+      box-shadow: 0 7px 25px rgba(31, 69, 45, 0.055);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(31, 69, 45, 0.10);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-green);
+      font-size: 25px;
+      margin-bottom: 17px;
+    }
+
+    .info-card h3 {
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 22px;
+      margin: 0 0 14px;
+    }
+
+    .info-card p {
+      color: #68756c;
+      margin: 7px 0;
+      font-size: 14px;
+    }
+
+    .info-card strong {
+      color: #34443a;
+    }
+
+    .founder-name {
+      color: var(--dark-green);
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #edf0e9;
+      margin: 14px 0;
+    }
+
+    /* VISION BANNER */
+
+    .vision-banner {
+      margin-top: 28px;
+      padding: 48px 35px;
+      text-align: center;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.10), transparent 35%),
+        linear-gradient(135deg, #174b35, #0e3928);
+      color: white;
+      box-shadow: 0 10px 30px rgba(17, 63, 43, 0.14);
+    }
+
+    .vision-banner .vision-icon {
+      font-size: 36px;
+    }
+
+    .vision-banner h2 {
+      color: #f4dfb5;
+      font-family: Georgia, serif;
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    .vision-banner p {
+      max-width: 750px;
+      margin: auto;
+      color: #e2ece4;
+      font-size: 15px;
+    }
+
+    /* SUPPORT */
+
+    .support-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 7px 25px rgba(31, 69, 45, 0.06);
+      border: 1px solid #edf0e9;
+    }
+
+    .support-card h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: var(--dark-green);
+      margin: 0 0 8px;
+    }
+
+    .support-card > p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .support-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .support-button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .email-button {
+      color: white;
+      background: var(--green);
+    }
+
+    .whatsapp-button {
+      color: white;
+      background: #258b55;
+    }
+
+    .support-button:hover {
+      transform: translateY(-3px);
+      opacity: 0.92;
+    }
+
+    .support-hours {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* CONTACT FORM */
+
+    .form-section {
+      margin-top: 65px;
+    }
+
+    .form-wrapper {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 7px 25px rgba(31, 69, 45, 0.06);
+      border: 1px solid #edf0e9;
+    }
+
+    .form-wrapper h2 {
+      text-align: center;
+      font-family: Georgia, serif;
+      color: var(--dark-green);
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    .form-wrapper > p {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 25px;
+    }
+
+    .form-wrapper iframe {
+      width: 100%;
+      min-height: 956px;
+      border: 0;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* SOCIAL */
+
+    .social-section {
+      text-align: center;
+      padding: 45px 20px;
+      background: var(--cream);
+      border-radius: 18px;
+      margin-top: 55px;
+    }
+
+    .social-section h2 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      color: var(--dark-green);
+      margin: 0 0 8px;
+    }
+
+    .social-section p {
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social-links a {
+      background: white;
+      color: var(--green);
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #e6eadd;
+      transition: 0.2s;
+    }
+
+    .social-links a:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 60px;
+      background: #103d2b;
+      color: #dce8de;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 13px;
+    }
+
+    footer .footer-brand {
+      color: #f4dfb5;
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 55px 18px 70px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .main-container {
+        padding: 0 14px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .info-card {
+        padding: 24px;
+      }
+
+      .section-heading {
+        margin-top: 48px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .vision-banner {
+        padding: 38px 22px;
+      }
+
+      .vision-banner h2,
+      .support-card h2 {
+        font-size: 27px;
+      }
+
+      .form-wrapper {
+        padding: 18px 12px;
+      }
+
+      .form-wrapper iframe {
+        min-height: 956px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ✅ Navigation Header -->
-  <header>
-    <a href="https://www.graina.in" class="logo" target="_blank">
-      <img src="images/graina-logo.png" alt="Graina Logo" />
+  <!-- GRAINA HEADER -->
+  <header class="site-header">
+    <a href="https://www.graina.in" target="_top">
+      <img
+        src="https://www.graina.in/images/graina-logo.png"
+        alt="Graina Logo">
     </a>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#benefits">Benefits</a></li>
-        <li><a href="https://pages.razorpay.com/stores/graina" class="nav-link">Products</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- ✅ Main Content -->
-  <div class="container">
-    <h1>📬 Contact Us — Graina</h1>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">We're here to help</span>
 
-    <div class="section contact-details">
-      <h2>🧾 Brand by:</h2>
-      <p><strong>Acinom Retail Traders LLP</strong></p>
-      <p>Registered under LLP Act, Govt. of India</p>
-      <p>GSTIN: 36ACHFA0375R1ZX </p>
-      <p>FSSAI: 23625015000115 </p>
-      <p> State FSSAI: 13625019000119 </p>
-    </div>
+      <h1>Let's Talk About <span>Good Food.</span></h1>
 
-    <div class="section">
-      <h2>👤 Our Co-Founders</h2>
-      <p><strong>Rajashekar Agurla</strong> — Co-Founder</p>
-      <p><strong>Ravikumar A</strong> — Co-Founder</p>
-      <p>Together, they founded <strong>Graina</strong> with a shared vision: to make fresh, natural, and chemical-free food accessible to every Indian home. From oats to millets, every product is a step toward healthier living.</p>
-    </div>
-
-    <div class="section">
-      <h2>🌱 Our Vision</h2>
-      <p>At Graina, we believe in honest food. Our mission is to offer pure, preservative-free grains that nurture families and support a healthy lifestyle. We’re proud to support Indian farmers and deliver quality you can trust.</p>
-    </div>
-
-    <div class="section">
-      <h2>🏢 Registered Office</h2>
-      <p>Acinom Retail Traders LLP</p>
-      <p>5-86/c, Ganeshnaar, Poodur Vil2</p>
-      <p>Karimnagar, Telangana, India, 505501</p>
-    </div>
-
-    <div class="section" id="contact">
-      <h2>📞 Customer Support</h2>
-      <p><strong>Email:</strong> <a href="mailto:support@graina.in">support@graina.in</a></p>
-      <p><strong>Phone/WhatsApp:</strong> +91-93916 42155</p>
-      <p><strong>Hours:</strong> Mon–Sat | 10:00 AM – 6:00 PM IST</p>
-    </div>
-
-
-
-
-    <section id="contact-form" style="background-color: #f8f9fa; padding: 50px 0;">
-  <div style="max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-    <h2 style="text-align: center; font-family: Arial, sans-serif; margin-bottom: 20px; color: #1a543b;">
-      Contact / Order Form
-    </h2>
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSf1pe1ByL9dn875KmPGNjI_nk7YFuGT4_KPRHkY9Feva7_FwA/viewform?embedded=true" 
-      width="100%" 
-      height="956" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0" 
-      style="border-radius: 8px;">
-      Loading…
-    </iframe>
-  </div>
-</section>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSZKVJ7JHP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TSZKVJ7JHP');
-</script>
-    <div class="section">
-      <h2>📱 Follow Us</h2>
       <p>
-        <a href="https://www.instagram.com/graina.official" target="_blank">Instagram</a> |
-        <a href="https://facebook.com/graina.in" target="_blank">Facebook</a> |
-        <a href="https://www.instagram.com/acinom.in/" target="_blank">Acinom Retail Traders Instagram</a>
+        Have a question, product enquiry or feedback?
+        We'd love to hear from you. The Graina team is always
+        happy to connect with you.
       </p>
+
+      <a href="#contact" class="hero-button">Get in Touch &nbsp; →</a>
     </div>
-  </div>
+  </section>
+
+  <main class="main-container">
+
+    <!-- COMPANY DETAILS -->
+    <div class="section-heading">
+      <span class="eyebrow">Get to know us</span>
+      <h2>A Little About Graina</h2>
+      <p>Rooted in trust. Inspired by nature. Made for healthier living.</p>
+    </div>
+
+    <div class="card-grid">
+
+      <!-- BRAND CARD -->
+      <div class="info-card">
+        <div class="card-icon">🌾</div>
+        <h3>Brand & Company</h3>
+
+        <p><strong>Acinom Retail Traders LLP</strong></p>
+        <p>Registered under LLP Act, Govt. of India</p>
+
+        <div class="divider"></div>
+
+        <p><strong>GSTIN:</strong> 36ACHFA0375R1ZX</p>
+        <p><strong>FSSAI:</strong> 23625015000115</p>
+        <p><strong>State FSSAI:</strong> 13625019000119</p>
+      </div>
+
+      <!-- FOUNDERS CARD -->
+      <div class="info-card">
+        <div class="card-icon">🤝</div>
+        <h3>Our Co-Founders</h3>
+
+        <p class="founder-name">Rajashekar Agurla</p>
+        <p>Co-Founder</p>
+
+        <div class="divider"></div>
+
+        <p class="founder-name">Ravikumar A</p>
+        <p>Co-Founder</p>
+
+        <p style="margin-top:16px;">
+          Together, they founded Graina with a shared vision
+          to make fresh, natural and chemical-free food
+          accessible to every Indian home.
+        </p>
+      </div>
+
+      <!-- OFFICE CARD -->
+      <div class="info-card">
+        <div class="card-icon">📍</div>
+        <h3>Registered Office</h3>
+
+        <p><strong>Acinom Retail Traders LLP</strong></p>
+        <p>5-86/c, Ganeshnaar, Poodur Vil2</p>
+        <p>Karimnagar, Telangana, India, 505501</p>
+
+        <div class="divider"></div>
+
+        <p>Our registered office is based in Telangana, India.</p>
+      </div>
+
+      <!-- CUSTOMER SUPPORT CARD -->
+      <div class="info-card">
+        <div class="card-icon">💬</div>
+        <h3>Customer Support</h3>
+
+        <p><strong>Email:</strong></p>
+        <p><a href="mailto:support@graina.in">support@graina.in</a></p>
+
+        <div class="divider"></div>
+
+        <p><strong>Phone / WhatsApp:</strong></p>
+        <p><a href="tel:+919391642155">+91-93916 42155</a></p>
+
+        <p><strong>Support Hours:</strong></p>
+        <p>Monday – Saturday</p>
+        <p>10:00 AM – 6:00 PM IST</p>
+      </div>
+
+    </div>
+
+    <!-- VISION -->
+    <section class="vision-banner">
+      <div class="vision-icon">🌱</div>
+      <h2>Our Vision, Our Promise</h2>
+
+      <p>
+        At Graina, we believe in honest food. Our mission is to offer
+        pure, preservative-free grains that nurture families and
+        support a healthy lifestyle. From oats to millets, every
+        product is a step toward healthier living. We're proud to
+        support Indian farmers and deliver quality you can trust.
+      </p>
+    </section>
+
+    <!-- CONTACT SUPPORT -->
+    <section id="contact" class="form-section">
+      <div class="support-card">
+        <h2>We're Just a Message Away</h2>
+
+        <p>
+          Reach out to us for orders, product information
+          or any assistance.
+        </p>
+
+        <div class="support-buttons">
+          <a class="support-button email-button"
+             href="mailto:support@graina.in">
+            ✉ Email Us
+          </a>
+
+          <a class="support-button whatsapp-button"
+             href="https://wa.me/919391642155"
+             target="_blank"
+             rel="noopener noreferrer">
+            WhatsApp Us
+          </a>
+        </div>
+
+        <div class="support-hours">
+          Monday – Saturday &nbsp; | &nbsp; 10:00 AM – 6:00 PM IST
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / ORDER FORM -->
+    <section id="contact-form" class="form-section">
+      <div class="section-heading">
+        <span class="eyebrow">We'd love to hear from you</span>
+        <h2>Contact / Order Enquiry</h2>
+        <p>Fill out the form below and connect with the Graina team.</p>
+      </div>
+
+      <div class="form-wrapper">
+        <h2>Send Us Your Enquiry</h2>
+        <p>Share your details and we'll get back to you.</p>
+
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf1pe1ByL9dn875KmPGNjI_nk7YFuGT4_KPRHkY9Feva7_FwA/viewform?embedded=true"
+          title="Graina Contact and Order Form"
+          height="956"
+          loading="lazy">
+          Loading…
+        </iframe>
+      </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="social-section">
+      <h2>Stay Connected With Graina</h2>
+
+      <p>Follow our journey towards healthier everyday living.</p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/graina.official"
+           target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+
+        <a href="https://facebook.com/graina.in"
+           target="_blank" rel="noopener noreferrer">
+          Facebook
+        </a>
+
+        <a href="https://www.instagram.com/acinom.in/"
+           target="_blank" rel="noopener noreferrer">
+          Acinom Instagram
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Graina</div>
+
+    <p>Honest Food. Healthier Living.</p>
+
+    <p>Brand by Acinom Retail Traders LLP</p>
+
+    <p>© 2026 Graina. All Rights Reserved.</p>
+  </footer>
+
+  <!-- GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSZKVJ7JHP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-TSZKVJ7JHP');
+  </script>
+
 </body>
 </html>
