@@ -1,76 +1,122 @@
-<div class="product-card">
-  <h3>Graina Foxtail Millet</h3>
-  <p>500 g</p>
-  <p>₹120</p>
 
-  <button
-    class="buy-now"
-    onclick="buyProduct('foxtail-500')">
-    Buy Now
-  </button>
-</div>
-
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<script>
-async function buyProduct(productId) {
-  try {
-    const response = await fetch(
-      "YOUR_FIREBASE_FUNCTION_URL/createOrder",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ productId })
-      }
-    );
-
-    const order = await response.json();
-
-    if (!response.ok) {
-      throw new Error(order.error || "Could not create order");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Products | Graina</title>
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    const options = {
-      key: "YOUR_RAZORPAY_KEY_ID",
-      amount: order.amount,
-      currency: "INR",
-      name: "Graina",
-      description: order.productName,
-      order_id: order.id,
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fbf8f0;
+      color: #214b36;
+    }
 
-      handler: async function (payment) {
-        const verifyResponse = await fetch(
-          "YOUR_FIREBASE_FUNCTION_URL/verifyPayment",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payment)
-          }
-        );
+    header {
+      background: #214b36;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        const result = await verifyResponse.json();
+    header img {
+      width: 145px;
+      max-height: 55px;
+      object-fit: contain;
+    }
 
-        if (verifyResponse.ok && result.verified) {
-          alert("Payment successful! Thank you for shopping with Graina.");
-        } else {
-          alert("Payment verification failed. Please contact Graina support.");
-        }
-      },
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-      theme: {
-        color: "#214b36"
+    .heading {
+      text-align: center;
+      padding: 24px 15px 16px;
+    }
+
+    .heading h1 {
+      font-family: Georgia, serif;
+      margin: 0 0 8px;
+      font-size: 32px;
+      color: #214b36;
+    }
+
+    .heading p {
+      color: #667368;
+      margin: 0;
+    }
+
+    .store {
+      width: 100%;
+      height: calc(100vh - 175px);
+      min-height: 650px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
+    .fallback {
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .fallback a {
+      color: #214b36;
+      font-weight: bold;
+    }
+
+    @media(max-width:600px) {
+      .heading h1 {
+        font-size: 25px;
       }
-    };
 
-    const checkout = new Razorpay(options);
-    checkout.open();
+      .store {
+        height: calc(100vh - 160px);
+        min-height: 650px;
+      }
+    }
+  </style>
+</head>
 
-  } catch (error) {
-    alert(error.message);
-  }
-}
-</script>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="https://www.graina.in/images/graina-logo.png"
+           alt="Graina Logo">
+    </a>
+
+    <a href="index.html">← Back to Home</a>
+  </header>
+
+  <section class="heading">
+    <h1>Shop Graina Products</h1>
+    <p>Goodness in Every Grain.</p>
+  </section>
+
+  <iframe
+    class="store"
+    src="https://pages.razorpay.com/stores/st_R383DGTXRI9eGO"
+    title="Graina Online Store"
+    allow="payment *">
+  </iframe>
+
+  <div class="fallback">
+    If the store does not appear,
+    <a href="https://pages.razorpay.com/stores/st_R383DGTXRI9eGO"
+       target="_blank" rel="noopener noreferrer">
+      Open Graina Store here
+    </a>.
+  </div>
+
+</body>
+</html>
