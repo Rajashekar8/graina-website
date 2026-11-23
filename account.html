@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Graina</title>
+  <meta name="description" content="Manage your Graina customer account.">
+  <link rel="icon" href="https://www.graina.in/images/graina-logo.png">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f5ed;
+      color: #263b30;
+    }
+
+    header {
+      background: #1a543b;
+      padding: 17px 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 180px;
+      max-height: 58px;
+      object-fit: contain;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 55px auto;
+      padding: 20px;
+    }
+
+    .account-card {
+      background: white;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    h1 {
+      color: #1a543b;
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      color: #718078;
+      margin-bottom: 28px;
+    }
+
+    .profile {
+      text-align: center;
+      padding: 20px 0 28px;
+    }
+
+    .avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #e8eee9;
+      margin-bottom: 12px;
+    }
+
+    .initial {
+      display: none;
+      width: 85px;
+      height: 85px;
+      line-height: 85px;
+      border-radius: 50%;
+      background: #1a543b;
+      color: white;
+      font-size: 32px;
+      margin: 0 auto 12px;
+    }
+
+    .profile h2 {
+      margin: 5px 0;
+      color: #1a543b;
+    }
+
+    .profile p {
+      color: #718078;
+      margin: 5px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .details {
+      border-top: 1px solid #e7ebe7;
+      margin-top: 10px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 0;
+      border-bottom: 1px solid #e7ebe7;
+    }
+
+    .detail-label {
+      color: #718078;
+      font-weight: 600;
+    }
+
+    .detail-value {
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      flex: 1;
+      min-width: 150px;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .primary {
+      background: #1a543b;
+      color: white;
+    }
+
+    .secondary {
+      background: #eee9dc;
+      color: #1a543b;
+    }
+
+    .message {
+      text-align: center;
+      padding: 35px 10px;
+    }
+
+    .message p {
+      color: #718078;
+      line-height: 1.7;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 45px 10px;
+    }
+
+    #accountContent, #signedOut {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #718078;
+      font-size: 13px;
+    }
+
+    @media(max-width: 550px) {
+      .container { margin: 25px auto; }
+      .account-card { padding: 24px 18px; }
+      h1 { font-size: 26px; }
+      .detail-row { flex-direction: column; gap: 6px; }
+      .detail-value { text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="https://www.graina.in">
+    <img src="https://www.graina.in/images/graina-logo.png"
+         alt="Graina Logo">
+  </a>
+</header>
+
+<main class="container">
+  <section class="account-card">
+
+    <div id="loading">Loading your account...</div>
+
+    <div id="accountContent">
+      <h1>My Account</h1>
+      <p class="subtitle">Welcome to your Graina account.</p>
+
+      <div class="profile">
+        <img id="userPhoto" class="avatar"
+             src="" alt="Profile photo" style="display:none;">
+
+        <div id="userInitial" class="initial">G</div>
+
+        <h2 id="userName">Graina Customer</h2>
+        <p id="userEmail"></p>
+      </div>
+
+      <div class="details">
+        <div class="detail-row">
+          <span class="detail-label">Full Name</span>
+          <span class="detail-value" id="detailName">-</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Email Address</span>
+          <span class="detail-value" id="detailEmail">-</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Phone Number</span>
+          <span class="detail-value" id="detailPhone">-</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Login Method</span>
+          <span class="detail-value" id="detailProvider">-</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-label">Account Status</span>
+          <span class="detail-value">Active</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="https://www.graina.in"
+           class="btn secondary">Continue Shopping</a>
+
+        <button id="logoutBtn"
+                class="btn primary">Sign Out</button>
+      </div>
+    </div>
+
+    <div id="signedOut" class="message">
+      <h1>Welcome to Graina!</h1>
+      <p>You are not currently signed in.<br>
+         Please log in or create an account to view your account details.</p>
+
+      <a href="https://www.graina.in"
+         class="btn primary">Go to Login / Sign Up</a>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2026 Graina | A brand of Acinom Retail Traders LLP
+  <br><br>
+  <a href="https://www.graina.in">Home</a> |
+  <a href="https://www.graina.in/contact.html">Contact Us</a> |
+  <a href="https://www.graina.in/terms-and-conditions.html">Terms & Conditions</a>
+</footer>
+
+<script type="module">
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+  import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDvX_vJ7mhgmbjghtpoSyuPZEhKNUbMH6s",
+    authDomain: "grainaindia.firebaseapp.com",
+    projectId: "grainaindia",
+    storageBucket: "grainaindia.firebasestorage.app",
+    messagingSenderId: "615336891540",
+    appId: "1:615336891540:web:acf8dd8b510a26924b5081",
+    measurementId: "G-Q8EQVYXWLV"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const loading = document.getElementById("loading");
+  const accountContent = document.getElementById("accountContent");
+  const signedOut = document.getElementById("signedOut");
+
+  onAuthStateChanged(auth, (user) => {
+    loading.style.display = "none";
+
+    if (user) {
+      accountContent.style.display = "block";
+      signedOut.style.display = "none";
+
+      const name = user.displayName || "Graina Customer";
+      const email = user.email || "Not provided";
+      const phone = user.phoneNumber || "Not provided";
+
+      document.getElementById("userName").textContent = name;
+      document.getElementById("userEmail").textContent = email;
+
+      document.getElementById("detailName").textContent = name;
+      document.getElementById("detailEmail").textContent = email;
+      document.getElementById("detailPhone").textContent = phone;
+
+      const providerIds = user.providerData.map(p => p.providerId);
+      const methods = [];
+
+      if (providerIds.includes("google.com")) methods.push("Google");
+      if (providerIds.includes("phone")) methods.push("Phone OTP");
+      if (providerIds.includes("password")) methods.push("Email / Password");
+
+      document.getElementById("detailProvider").textContent =
+        methods.length ? methods.join(", ") : "Firebase Login";
+
+      if (user.photoURL) {
+        const photo = document.getElementById("userPhoto");
+        photo.src = user.photoURL;
+        photo.style.display = "inline-block";
+        document.getElementById("userInitial").style.display = "none";
+      } else {
+        document.getElementById("userInitial").textContent =
+          name.charAt(0).toUpperCase();
+        document.getElementById("userInitial").style.display = "block";
+      }
+
+    } else {
+      accountContent.style.display = "none";
+      signedOut.style.display = "block";
+    }
+  });
+
+  document.getElementById("logoutBtn").addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      window.location.href = "https://www.graina.in";
+    } catch (error) {
+      alert("Unable to sign out. Please try again.");
+      console.error(error);
+    }
+  });
+</script>
+
+</body>
+</html>
