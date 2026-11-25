@@ -162,56 +162,20 @@ flex-direction:column;
 background:#fff
 }
 
-.topbar{
-height:60px;
-flex:0 0 60px;
-border-bottom:1px solid var(--line);
-display:flex;
-align-items:center;
-gap:14px;
-padding:0 20px;
-background:#fff
-}
-
 .menu{
 display:none;
-border:0;
-background:transparent;
-font-size:23px;
-color:var(--green);
-cursor:pointer
-}
-
-.top-title{
-font-weight:700;
-color:var(--green)
-}
-
-.top-sub{
-margin-left:auto;
-color:#888;
-font-size:12px
-}
-
-/* Google AdSense Advertisement */
-.ad-container{
-width:100%;
-min-height:100px;
-padding:8px 12px;
-display:flex;
-justify-content:center;
-align-items:center;
+position:fixed;
+top:10px;
+left:10px;
+z-index:30;
+border:1px solid var(--line);
+border-radius:8px;
 background:#fff;
-border-bottom:1px solid var(--line);
-overflow:hidden;
-flex:0 0 auto
-}
-
-.ad-container ins.adsbygoogle{
-display:block;
-width:100%;
-max-width:970px;
-min-height:90px
+font-size:22px;
+color:var(--green);
+padding:7px 11px;
+cursor:pointer;
+box-shadow:0 2px 10px #0001
 }
 
 .viewer{
@@ -273,22 +237,6 @@ background:#0005;
 z-index:4
 }
 
-.topbar{
-padding:0 13px
-}
-
-.top-sub{
-display:none
-}
-
-.ad-container{
-min-height:90px;
-padding:6px
-}
-
-.ad-container ins.adsbygoogle{
-min-height:80px
-}
 }
 </style>
 </head>
@@ -429,36 +377,8 @@ Goodness in Every Grain.<br>
 <!-- MAIN CONTENT -->
 <main class="main">
 
-<div class="topbar">
-
-<button class="menu" id="menu" aria-label="Open recipe list">
-☰
-</button>
-
-<span class="top-title" id="currentTitle">
-Graina Kitchen
-</span>
-
-<span class="top-sub">
-Choose a recipe from the left
-</span>
-
-</div>
-
-<!-- ADSENSE ADVERTISEMENT -->
-<div class="ad-container">
-
-<ins class="adsbygoogle"
-     data-ad-client="ca-pub-6853390731196720"
-     data-ad-slot="YOUR_AD_SLOT_ID"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-
-<script>
-(window.adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-</div>
+<!-- Mobile recipe-list button -->
+<button class="menu" id="menu" aria-label="Open recipe list" aria-expanded="false">☰</button>
 
 <!-- RECIPE IFRAME -->
 <iframe
@@ -475,7 +395,6 @@ src="foxtail-millet-upma.html">
 const sidebar=document.getElementById('sidebar'),
 backdrop=document.getElementById('backdrop'),
 viewer=document.getElementById('viewer'),
-title=document.getElementById('currentTitle'),
 links=[...document.querySelectorAll('.recipe-link')];
 
 function selectRecipe(btn){
@@ -483,12 +402,12 @@ function selectRecipe(btn){
 links.forEach(x=>x.classList.toggle('active',x===btn));
 
 viewer.src=btn.dataset.file;
-title.textContent=btn.textContent.trim();
 
 history.replaceState(null,'','#'+btn.dataset.file);
 
 sidebar.classList.remove('open');
 backdrop.classList.remove('show');
+document.getElementById('menu').setAttribute('aria-expanded','false');
 
 }
 
@@ -513,11 +432,13 @@ b.style.display=b.textContent.toLowerCase().includes(q)?'flex':'none';
 document.getElementById('menu').addEventListener('click',()=>{
 sidebar.classList.add('open');
 backdrop.classList.add('show');
+document.getElementById('menu').setAttribute('aria-expanded','true');
 });
 
 backdrop.addEventListener('click',()=>{
 sidebar.classList.remove('open');
 backdrop.classList.remove('show');
+document.getElementById('menu').setAttribute('aria-expanded','false');
 });
 
 const hash=decodeURIComponent(location.hash.slice(1));
