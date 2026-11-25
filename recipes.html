@@ -1,13 +1,538 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Graina Recipes | Graina Kitchen</title><meta name="description" content="Browse Graina millet, quinoa and oats recipes in one easy recipe workspace."><style>
-:root{--green:#214b36;--deep:#173b2a;--gold:#c99b52;--cream:#fbf8f0;--ink:#26342b;--line:#e7e1d5;--muted:#778078}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.5 Arial,sans-serif;height:100vh;overflow:hidden}.app{height:100vh;display:flex}.sidebar{width:292px;flex:0 0 292px;background:#f2efe7;border-right:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s;z-index:5}.side-head{padding:20px 16px 14px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;justify-content:space-between;color:var(--green);font:bold 27px Georgia,serif;text-decoration:none;padding:0 5px 16px}.new-btn{display:flex;align-items:center;gap:10px;width:100%;padding:11px 13px;border:1px solid #d9d2c4;border-radius:10px;background:#fff;color:var(--green);font-weight:700;text-align:left;text-decoration:none}.new-btn:hover,.recipe-link:hover{background:#e9e5da}.search{margin-top:12px;width:100%;padding:10px 12px;border:1px solid #ddd6c9;border-radius:9px;background:#fff;font-size:14px;outline-color:var(--green)}.list{overflow:auto;padding:10px 10px 24px;flex:1}.group-title{font-size:13px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;color:#111;padding:15px 9px 6px}.recipe-link{display:flex;align-items:center;gap:9px;width:100%;border:0;background:transparent;border-radius:8px;padding:10px 9px;text-align:left;color:#111;font-size:13.5px;font-weight:500;font-family:Arial,sans-serif;cursor:pointer;line-height:1.45}.recipe-link.active{background:#e3e8df;color:#111;font-weight:500}.recipe-dot{color:#555;font-size:12px;font-weight:500;flex:0 0 22px;font-variant-numeric:tabular-nums}.side-foot{padding:13px 16px;border-top:1px solid var(--line);font-size:12px;color:#777}.side-foot a{color:var(--green);text-decoration:none;font-weight:bold}.main{min-width:0;flex:1;display:flex;flex-direction:column;background:#fff}.topbar{height:60px;flex:0 0 60px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 20px;background:#fff}.menu{display:none;border:0;background:transparent;font-size:23px;color:var(--green);cursor:pointer}.top-title{font-weight:700;color:var(--green)}.top-sub{margin-left:auto;color:#888;font-size:12px}.viewer{border:0;width:100%;height:100%;flex:1;background:#fbf8f0}.welcome{display:none;flex:1;align-items:center;justify-content:center;text-align:center;padding:30px}.welcome h1{font: bold 34px Georgia,serif;color:var(--green)}.welcome p{color:#6b756d;max-width:500px}.backdrop{display:none}
-@media(max-width:760px){.sidebar{position:fixed;left:0;top:0;bottom:0;transform:translateX(-100%);box-shadow:10px 0 35px #0002}.sidebar.open{transform:translateX(0)}.menu{display:block}.backdrop.show{display:block;position:fixed;inset:0;background:#0005;z-index:4}.topbar{padding:0 13px}.top-sub{display:none}}
-</style></head><body><div class="app"><aside class="sidebar" id="sidebar"><div class="side-head"><a class="brand" href="index.html">Graina <span style="font:12px Arial;color:#8b7655">KITCHEN</span></a><a class="new-btn" href="recipes.html">＋ <span>All recipes</span></a><input class="search" id="search" placeholder="Search recipes…" aria-label="Search recipes"></div><nav class="list" id="recipeList"><div class="group-title">Foxtail Millet</div><button class="recipe-link" data-file="foxtail-millet-upma.html" title="Foxtail Millet Upma"><span class="recipe-dot">01</span><span>Foxtail Millet Upma</span></button><button class="recipe-link" data-file="foxtail-millet-lemon-rice.html" title="Foxtail Millet Lemon Rice"><span class="recipe-dot">02</span><span>Foxtail Millet Lemon Rice</span></button><button class="recipe-link" data-file="foxtail-millet-pongal.html" title="Foxtail Millet Pongal"><span class="recipe-dot">03</span><span>Foxtail Millet Pongal</span></button><div class="group-title">Little Millet</div><button class="recipe-link" data-file="little-millet-khichdi.html" title="Little Millet Khichdi"><span class="recipe-dot">04</span><span>Little Millet Khichdi</span></button><button class="recipe-link" data-file="little-millet-curd-rice.html" title="Little Millet Curd Rice"><span class="recipe-dot">05</span><span>Little Millet Curd Rice</span></button><button class="recipe-link" data-file="little-millet-vegetable-pulao.html" title="Little Millet Vegetable Pulao"><span class="recipe-dot">06</span><span>Little Millet Vegetable Pulao</span></button><div class="group-title">Kodo Millet</div><button class="recipe-link" data-file="kodo-millet-rice.html" title="Kodo Millet Rice"><span class="recipe-dot">07</span><span>Kodo Millet Rice</span></button><button class="recipe-link" data-file="kodo-millet-vegetable-biryani.html" title="Kodo Millet Vegetable Biryani"><span class="recipe-dot">08</span><span>Kodo Millet Vegetable Biryani</span></button><div class="group-title">Browntop Millet</div><button class="recipe-link" data-file="browntop-millet-dosa.html" title="Browntop Millet Dosa"><span class="recipe-dot">09</span><span>Browntop Millet Dosa</span></button><button class="recipe-link" data-file="browntop-millet-vegetable-upma.html" title="Browntop Millet Vegetable Upma"><span class="recipe-dot">10</span><span>Browntop Millet Vegetable Upma</span></button><div class="group-title">Barnyard Millet</div><button class="recipe-link" data-file="barnyard-millet-pongal.html" title="Barnyard Millet Pongal"><span class="recipe-dot">11</span><span>Barnyard Millet Pongal</span></button><button class="recipe-link" data-file="barnyard-millet-idli.html" title="Barnyard Millet Idli"><span class="recipe-dot">12</span><span>Barnyard Millet Idli</span></button><div class="group-title">Quinoa</div><button class="recipe-link" data-file="quinoa-vegetable-pulao.html" title="Quinoa Vegetable Pulao"><span class="recipe-dot">13</span><span>Quinoa Vegetable Pulao</span></button><button class="recipe-link" data-file="quinoa-chickpea-salad.html" title="Quinoa Chickpea Salad"><span class="recipe-dot">14</span><span>Quinoa Chickpea Salad</span></button><div class="group-title">Oats</div><button class="recipe-link" data-file="oats-vegetable-chilla.html" title="Oats Vegetable Chilla"><span class="recipe-dot">15</span><span>Oats Vegetable Chilla</span></button><button class="recipe-link" data-file="oats-porridge.html" title="Oats Porridge"><span class="recipe-dot">16</span><span>Oats Porridge</span></button></nav><div class="side-foot">Goodness in Every Grain.<br><a href="index.html">← Back to Graina home</a></div></aside><div class="backdrop" id="backdrop"></div><main class="main"><div class="topbar"><button class="menu" id="menu" aria-label="Open recipe list">☰</button><span class="top-title" id="currentTitle">Graina Kitchen</span><span class="top-sub">Choose a recipe from the left</span></div><iframe class="viewer" id="viewer" title="Selected Graina recipe" src="foxtail-millet-upma.html"></iframe></main></div>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graina Recipes | Graina Kitchen</title>
+<meta name="description" content="Browse Graina millet, quinoa and oats recipes in one easy recipe workspace.">
+
+<!-- Google AdSense Code -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6853390731196720"
+     crossorigin="anonymous"></script>
+
+<style>
+:root{
+--green:#214b36;
+--deep:#173b2a;
+--gold:#c99b52;
+--cream:#fbf8f0;
+--ink:#26342b;
+--line:#e7e1d5;
+--muted:#778078
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:var(--cream);
+color:var(--ink);
+font:15px/1.5 Arial,sans-serif;
+height:100vh;
+overflow:hidden
+}
+
+.app{
+height:100vh;
+display:flex
+}
+
+.sidebar{
+width:292px;
+flex:0 0 292px;
+background:#f2efe7;
+border-right:1px solid var(--line);
+display:flex;
+flex-direction:column;
+transition:transform .25s;
+z-index:5
+}
+
+.side-head{
+padding:20px 16px 14px;
+border-bottom:1px solid var(--line)
+}
+
+.brand{
+display:flex;
+align-items:center;
+justify-content:space-between;
+color:var(--green);
+font:bold 27px Georgia,serif;
+text-decoration:none;
+padding:0 5px 16px
+}
+
+.new-btn{
+display:flex;
+align-items:center;
+gap:10px;
+width:100%;
+padding:11px 13px;
+border:1px solid #d9d2c4;
+border-radius:10px;
+background:#fff;
+color:var(--green);
+font-weight:700;
+text-align:left;
+text-decoration:none
+}
+
+.new-btn:hover,.recipe-link:hover{
+background:#e9e5da
+}
+
+.search{
+margin-top:12px;
+width:100%;
+padding:10px 12px;
+border:1px solid #ddd6c9;
+border-radius:9px;
+background:#fff;
+font-size:14px;
+outline-color:var(--green)
+}
+
+.list{
+overflow:auto;
+padding:10px 10px 24px;
+flex:1
+}
+
+.group-title{
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:.8px;
+font-weight:800;
+color:#111;
+padding:15px 9px 6px
+}
+
+.recipe-link{
+display:flex;
+align-items:center;
+gap:9px;
+width:100%;
+border:0;
+background:transparent;
+border-radius:8px;
+padding:10px 9px;
+text-align:left;
+color:#111;
+font-size:13.5px;
+font-weight:500;
+font-family:Arial,sans-serif;
+cursor:pointer;
+line-height:1.45
+}
+
+.recipe-link.active{
+background:#e3e8df;
+color:#111;
+font-weight:500
+}
+
+.recipe-dot{
+color:#555;
+font-size:12px;
+font-weight:500;
+flex:0 0 22px;
+font-variant-numeric:tabular-nums
+}
+
+.side-foot{
+padding:13px 16px;
+border-top:1px solid var(--line);
+font-size:12px;
+color:#777
+}
+
+.side-foot a{
+color:var(--green);
+text-decoration:none;
+font-weight:bold
+}
+
+.main{
+min-width:0;
+flex:1;
+display:flex;
+flex-direction:column;
+background:#fff
+}
+
+.topbar{
+height:60px;
+flex:0 0 60px;
+border-bottom:1px solid var(--line);
+display:flex;
+align-items:center;
+gap:14px;
+padding:0 20px;
+background:#fff
+}
+
+.menu{
+display:none;
+border:0;
+background:transparent;
+font-size:23px;
+color:var(--green);
+cursor:pointer
+}
+
+.top-title{
+font-weight:700;
+color:var(--green)
+}
+
+.top-sub{
+margin-left:auto;
+color:#888;
+font-size:12px
+}
+
+/* Google AdSense Advertisement */
+.ad-container{
+width:100%;
+min-height:100px;
+padding:8px 12px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#fff;
+border-bottom:1px solid var(--line);
+overflow:hidden;
+flex:0 0 auto
+}
+
+.ad-container ins.adsbygoogle{
+display:block;
+width:100%;
+max-width:970px;
+min-height:90px
+}
+
+.viewer{
+border:0;
+width:100%;
+height:100%;
+flex:1;
+background:#fbf8f0;
+min-height:0
+}
+
+.welcome{
+display:none;
+flex:1;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px
+}
+
+.welcome h1{
+font:bold 34px Georgia,serif;
+color:var(--green)
+}
+
+.welcome p{
+color:#6b756d;
+max-width:500px
+}
+
+.backdrop{
+display:none
+}
+
+@media(max-width:760px){
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+bottom:0;
+transform:translateX(-100%);
+box-shadow:10px 0 35px #0002
+}
+
+.sidebar.open{
+transform:translateX(0)
+}
+
+.menu{
+display:block
+}
+
+.backdrop.show{
+display:block;
+position:fixed;
+inset:0;
+background:#0005;
+z-index:4
+}
+
+.topbar{
+padding:0 13px
+}
+
+.top-sub{
+display:none
+}
+
+.ad-container{
+min-height:90px;
+padding:6px
+}
+
+.ad-container ins.adsbygoogle{
+min-height:80px
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+<div class="side-head">
+
+<a class="brand" href="index.html">
+Graina
+<span style="font:12px Arial;color:#8b7655">KITCHEN</span>
+</a>
+
+<a class="new-btn" href="recipes.html">
+＋ <span>All recipes</span>
+</a>
+
+<input
+class="search"
+id="search"
+placeholder="Search recipes…"
+aria-label="Search recipes">
+
+</div>
+
+<nav class="list" id="recipeList">
+
+<div class="group-title">Foxtail Millet</div>
+
+<button class="recipe-link" data-file="foxtail-millet-upma.html" title="Foxtail Millet Upma">
+<span class="recipe-dot">01</span>
+<span>Foxtail Millet Upma</span>
+</button>
+
+<button class="recipe-link" data-file="foxtail-millet-lemon-rice.html" title="Foxtail Millet Lemon Rice">
+<span class="recipe-dot">02</span>
+<span>Foxtail Millet Lemon Rice</span>
+</button>
+
+<button class="recipe-link" data-file="foxtail-millet-pongal.html" title="Foxtail Millet Pongal">
+<span class="recipe-dot">03</span>
+<span>Foxtail Millet Pongal</span>
+</button>
+
+<div class="group-title">Little Millet</div>
+
+<button class="recipe-link" data-file="little-millet-khichdi.html" title="Little Millet Khichdi">
+<span class="recipe-dot">04</span>
+<span>Little Millet Khichdi</span>
+</button>
+
+<button class="recipe-link" data-file="little-millet-curd-rice.html" title="Little Millet Curd Rice">
+<span class="recipe-dot">05</span>
+<span>Little Millet Curd Rice</span>
+</button>
+
+<button class="recipe-link" data-file="little-millet-vegetable-pulao.html" title="Little Millet Vegetable Pulao">
+<span class="recipe-dot">06</span>
+<span>Little Millet Vegetable Pulao</span>
+</button>
+
+<div class="group-title">Kodo Millet</div>
+
+<button class="recipe-link" data-file="kodo-millet-rice.html" title="Kodo Millet Rice">
+<span class="recipe-dot">07</span>
+<span>Kodo Millet Rice</span>
+</button>
+
+<button class="recipe-link" data-file="kodo-millet-vegetable-biryani.html" title="Kodo Millet Vegetable Biryani">
+<span class="recipe-dot">08</span>
+<span>Kodo Millet Vegetable Biryani</span>
+</button>
+
+<div class="group-title">Browntop Millet</div>
+
+<button class="recipe-link" data-file="browntop-millet-dosa.html" title="Browntop Millet Dosa">
+<span class="recipe-dot">09</span>
+<span>Browntop Millet Dosa</span>
+</button>
+
+<button class="recipe-link" data-file="browntop-millet-vegetable-upma.html" title="Browntop Millet Vegetable Upma">
+<span class="recipe-dot">10</span>
+<span>Browntop Millet Vegetable Upma</span>
+</button>
+
+<div class="group-title">Barnyard Millet</div>
+
+<button class="recipe-link" data-file="barnyard-millet-pongal.html" title="Barnyard Millet Pongal">
+<span class="recipe-dot">11</span>
+<span>Barnyard Millet Pongal</span>
+</button>
+
+<button class="recipe-link" data-file="barnyard-millet-idli.html" title="Barnyard Millet Idli">
+<span class="recipe-dot">12</span>
+<span>Barnyard Millet Idli</span>
+</button>
+
+<div class="group-title">Quinoa</div>
+
+<button class="recipe-link" data-file="quinoa-vegetable-pulao.html" title="Quinoa Vegetable Pulao">
+<span class="recipe-dot">13</span>
+<span>Quinoa Vegetable Pulao</span>
+</button>
+
+<button class="recipe-link" data-file="quinoa-chickpea-salad.html" title="Quinoa Chickpea Salad">
+<span class="recipe-dot">14</span>
+<span>Quinoa Chickpea Salad</span>
+</button>
+
+<div class="group-title">Oats</div>
+
+<button class="recipe-link" data-file="oats-vegetable-chilla.html" title="Oats Vegetable Chilla">
+<span class="recipe-dot">15</span>
+<span>Oats Vegetable Chilla</span>
+</button>
+
+<button class="recipe-link" data-file="oats-porridge.html" title="Oats Porridge">
+<span class="recipe-dot">16</span>
+<span>Oats Porridge</span>
+</button>
+
+</nav>
+
+<div class="side-foot">
+Goodness in Every Grain.<br>
+<a href="index.html">← Back to Graina home</a>
+</div>
+
+</aside>
+
+<div class="backdrop" id="backdrop"></div>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+<div class="topbar">
+
+<button class="menu" id="menu" aria-label="Open recipe list">
+☰
+</button>
+
+<span class="top-title" id="currentTitle">
+Graina Kitchen
+</span>
+
+<span class="top-sub">
+Choose a recipe from the left
+</span>
+
+</div>
+
+<!-- ADSENSE ADVERTISEMENT -->
+<div class="ad-container">
+
+<ins class="adsbygoogle"
+     data-ad-client="ca-pub-6853390731196720"
+     data-ad-slot="YOUR_AD_SLOT_ID"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+
 <script>
-const sidebar=document.getElementById('sidebar'),backdrop=document.getElementById('backdrop'),viewer=document.getElementById('viewer'),title=document.getElementById('currentTitle'),links=[...document.querySelectorAll('.recipe-link')];
-function selectRecipe(btn){links.forEach(x=>x.classList.toggle('active',x===btn));viewer.src=btn.dataset.file;title.textContent=btn.textContent.trim();history.replaceState(null,'','#'+btn.dataset.file);sidebar.classList.remove('open');backdrop.classList.remove('show')}
-links.forEach(btn=>btn.addEventListener('click',()=>selectRecipe(btn)));
-document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.group-title').forEach(h=>h.style.display='');links.forEach(b=>{b.style.display=b.textContent.toLowerCase().includes(q)?'flex':'none'})});
-document.getElementById('menu').addEventListener('click',()=>{sidebar.classList.add('open');backdrop.classList.add('show')});backdrop.addEventListener('click',()=>{sidebar.classList.remove('open');backdrop.classList.remove('show')});
-const hash=decodeURIComponent(location.hash.slice(1));if(hash){const match=links.find(b=>b.dataset.file===hash);if(match)selectRecipe(match)}else selectRecipe(links[0]);
-</script></body></html>
+(window.adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<!-- RECIPE IFRAME -->
+<iframe
+class="viewer"
+id="viewer"
+title="Selected Graina recipe"
+src="foxtail-millet-upma.html">
+</iframe>
+
+</main>
+</div>
+
+<script>
+const sidebar=document.getElementById('sidebar'),
+backdrop=document.getElementById('backdrop'),
+viewer=document.getElementById('viewer'),
+title=document.getElementById('currentTitle'),
+links=[...document.querySelectorAll('.recipe-link')];
+
+function selectRecipe(btn){
+
+links.forEach(x=>x.classList.toggle('active',x===btn));
+
+viewer.src=btn.dataset.file;
+title.textContent=btn.textContent.trim();
+
+history.replaceState(null,'','#'+btn.dataset.file);
+
+sidebar.classList.remove('open');
+backdrop.classList.remove('show');
+
+}
+
+links.forEach(btn=>{
+btn.addEventListener('click',()=>selectRecipe(btn));
+});
+
+document.getElementById('search').addEventListener('input',e=>{
+
+const q=e.target.value.toLowerCase();
+
+document.querySelectorAll('.group-title').forEach(h=>{
+h.style.display='';
+});
+
+links.forEach(b=>{
+b.style.display=b.textContent.toLowerCase().includes(q)?'flex':'none';
+});
+
+});
+
+document.getElementById('menu').addEventListener('click',()=>{
+sidebar.classList.add('open');
+backdrop.classList.add('show');
+});
+
+backdrop.addEventListener('click',()=>{
+sidebar.classList.remove('open');
+backdrop.classList.remove('show');
+});
+
+const hash=decodeURIComponent(location.hash.slice(1));
+
+if(hash){
+const match=links.find(b=>b.dataset.file===hash);
+if(match){
+selectRecipe(match);
+}else{
+selectRecipe(links[0]);
+}
+}else{
+selectRecipe(links[0]);
+}
+</script>
+
+</body>
+</html>
